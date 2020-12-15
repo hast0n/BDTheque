@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Album.cs" />
+    <Compile Include="Author.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Genre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Series.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <EmbeddedResource Include="Mapping\User.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

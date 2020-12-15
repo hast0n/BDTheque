@@ -4,18 +4,22 @@ drop table if exists genre;
 drop table if exists category;
 drop table if exists author;
 drop table if exists publisher;
+drop table if exists series;
 
 create table user (
     user_id integer not null primary key auto_increment,
     user_last_name varchar(100) not null,
     user_first_name varchar(100) not null,
-	user_mail varchar(100)
+	user_mail varchar(100) not null,
+	user_privilege integer not null
 );
 
 create table album (
 	album_id integer not null primary key auto_increment,
 	album_release_date datetime not null,
 	album_title varchar(200) not null,
+	album_isbn varchar(200) not null,
+	album_publisher varchar(200) not null,
 	album_series varchar(200) not null
 );
 
@@ -34,7 +38,7 @@ create table author (
 	author_name varchar(200) not null
 );
 
-create table publisher (
-	publisher_id integer not null primary key auto_increment,
-	publisher_name varchar(200) not null
+create table series (
+	series_id integer not null primary key auto_increment,
+	series_name varchar(200) not null
 );
