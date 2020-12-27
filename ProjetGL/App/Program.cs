@@ -16,7 +16,7 @@ namespace App
             Application.SetCompatibleTextRenderingDefault(false);
 
             IUserRepository userRepo = new UserRepository();
-            Application.Run(new LoginForm(userRepo));
+            Application.Run(new LoginForm());//userRepo
         }
     }
 }

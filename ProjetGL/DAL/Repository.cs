@@ -1,5 +1,4 @@
-﻿
-using NHibernate;
+﻿using NHibernate;
 using NHibernate.Cfg;
 
 namespace DAL

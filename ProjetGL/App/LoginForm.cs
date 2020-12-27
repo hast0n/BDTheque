@@ -16,5 +16,21 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void connectBtn_Click(object sender, EventArgs e)
+        {
+            MainForm mainform = new MainForm();
+            this.Close();
+        }
     }
 }
