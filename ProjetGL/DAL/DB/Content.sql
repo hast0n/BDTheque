@@ -1,6 +1,6 @@
-insert into prospect values
-(1, 'Stark', 'Arya', 'arya@winterfell.north', '2016-07-16', 'Difficile à joindre');
-insert into prospect values
-(2, 'Soprano', 'Tony', 'tonys@dimeo.it', '2018-10-07', '');
-insert into prospect values
-(3, 'Underwood', 'Franck', 'potus@whitehouse.gov', '2018-09-07', '');
+insert into user values
+(1, 'Devreese', 'Martin', 'mdevreese@ensc.fr', '1', 'f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17');
+insert into user values
+(2, 'Maneux', 'Tangi', 'tmaneux@ensc.fr', '1', 'f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17');
+insert into user values
+(3, 'Lambda', 'Toto', 'toto@lambada.com', '0', 'f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17');

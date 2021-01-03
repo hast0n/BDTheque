@@ -18,6 +18,7 @@ namespace Domain
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
         public virtual string Email { get; set; }
+        public virtual string PasswordHash { get; set; }
         public virtual Privilege Privilege { get; set; }
 
         public User()

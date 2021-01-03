@@ -12,7 +12,8 @@
     <property name="LastName" column="user_last_name" not-null="true"/>
     <property name="FirstName" column="user_first_name" not-null="true"/>
     <property name="Email" column="user_mail" not-null="true"/>
-    <property name="Privilege" column="user_privilege" not-null="true"/>
+    <property name="PasswordHash" column="user_hash" not-null="true"/>
+    <property name="Privilege" column="user_privilege"/>
 
     <!-- Mapping des associations de la classe -->
 

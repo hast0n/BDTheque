@@ -1,4 +1,4 @@
-drop table if exists user;
+drop table if exists `user`;
 drop table if exists album;
 drop table if exists genre;
 drop table if exists category;
@@ -6,12 +6,13 @@ drop table if exists author;
 drop table if exists publisher;
 drop table if exists series;
 
-create table user (
+create table `user` (
     user_id integer not null primary key auto_increment,
     user_last_name varchar(100) not null,
     user_first_name varchar(100) not null,
 	user_mail varchar(100) not null,
-	user_privilege integer not null
+	user_privilege integer,
+	user_hash varchar(100)
 );
 
 create table album (

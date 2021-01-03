@@ -15,14 +15,14 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public bool CheckUser(string username, string passwordHash)
+        public User GetUser(string email, string passwordHash)
         {
-            throw new NotImplementedException();
-        }
-
-        public User GetUser(string username)
-        {
-            throw new NotImplementedException();
+            var result = Session.Query<User>()
+                .Where(u =>
+                    u.Email.Equals(email) &&
+                    u.PasswordHash.Equals(passwordHash))
+                .ToList();
+            return result.Count > 0 ? result[0] : null;
         }
     }
 }
