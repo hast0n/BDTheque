@@ -10,6 +10,16 @@ namespace DAL
 {
     public class UserRepository : Repository, IUserRepository
     {
+        public List<User> GetAll()
+        {
+            return Session.Query<User>().ToList();
+        }
+
+        public void Save(User user)
+        {
+            Session.SaveOrUpdate(user);
+            Session.Flush();
+        }
         public void AddUser(User user)
         {
             throw new NotImplementedException();
