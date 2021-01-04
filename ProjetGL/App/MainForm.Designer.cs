@@ -31,13 +31,15 @@ namespace App
         {
             this.label1 = new System.Windows.Forms.Label();
             this.currentUserLabel = new System.Windows.Forms.Label();
-            this.connectBtn = new System.Windows.Forms.Button();
             this.disconnectBtn = new System.Windows.Forms.Button();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.myAlbumsPage = new System.Windows.Forms.TabPage();
             this.marketAlbumsPage = new System.Windows.Forms.TabPage();
             this.wishesPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mainTabControl.SuspendLayout();
+            this.myAlbumsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,19 +59,6 @@ namespace App
             this.currentUserLabel.Size = new System.Drawing.Size(48, 17);
             this.currentUserLabel.TabIndex = 1;
             this.currentUserLabel.Text = "Aucun";
-            // 
-            // connectBtn
-            // 
-            this.connectBtn.BackColor = System.Drawing.Color.Transparent;
-            this.connectBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.connectBtn.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.connectBtn.Location = new System.Drawing.Point(576, 50);
-            this.connectBtn.Name = "connectBtn";
-            this.connectBtn.Size = new System.Drawing.Size(83, 26);
-            this.connectBtn.TabIndex = 2;
-            this.connectBtn.Text = "S\'identifier";
-            this.connectBtn.UseVisualStyleBackColor = false;
-            this.connectBtn.Click += new System.EventHandler(this.connectBtn_Click);
             // 
             // disconnectBtn
             // 
@@ -94,6 +83,7 @@ namespace App
             // 
             // myAlbumsPage
             // 
+            this.myAlbumsPage.Controls.Add(this.dataGridView1);
             this.myAlbumsPage.Location = new System.Drawing.Point(4, 25);
             this.myAlbumsPage.Name = "myAlbumsPage";
             this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -123,6 +113,18 @@ namespace App
             this.wishesPage.UseVisualStyleBackColor = true;
             this.wishesPage.UseWaitCursor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,13 +132,14 @@ namespace App
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.disconnectBtn);
-            this.Controls.Add(this.connectBtn);
             this.Controls.Add(this.currentUserLabel);
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTabControl.ResumeLayout(false);
+            this.myAlbumsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,11 +149,11 @@ namespace App
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label currentUserLabel;
-        private System.Windows.Forms.Button connectBtn;
         private System.Windows.Forms.Button disconnectBtn;
         private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage myAlbumsPage;
         private System.Windows.Forms.TabPage marketAlbumsPage;
         private System.Windows.Forms.TabPage wishesPage;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
