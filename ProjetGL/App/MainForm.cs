@@ -23,7 +23,7 @@ namespace App
 
             _user = user;
             _albumRepository = albumRepo;
-
+            currentUserLabel.Text = user.FirstName + " " + user.LastName;
 
         }
 
@@ -31,24 +31,14 @@ namespace App
         {
 
         }
-
-        private void connectBtn_Click(object sender, EventArgs e)
-        {
-
-            LoginForm loginForm = new LoginForm();
-            if (loginForm.ShowDialog() == DialogResult.OK)
-            {
-                _user = loginForm.User;
-
-
-
-                RefreshUserView();
-            }
-        }
         private void RefreshUserView()
         {
-            disconnectBtn.Enabled = true;
-            currentUserLabel.Text = loginForm.User.FirstName + "" + loginForm.User.LastName;
+            
+        }
+
+        private void myAlbumsPage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,12 +31,11 @@ namespace App
         {
             this.label1 = new System.Windows.Forms.Label();
             this.currentUserLabel = new System.Windows.Forms.Label();
-            this.disconnectBtn = new System.Windows.Forms.Button();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.myAlbumsPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.marketAlbumsPage = new System.Windows.Forms.TabPage();
             this.wishesPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,16 +59,6 @@ namespace App
             this.currentUserLabel.TabIndex = 1;
             this.currentUserLabel.Text = "Aucun";
             // 
-            // disconnectBtn
-            // 
-            this.disconnectBtn.Enabled = false;
-            this.disconnectBtn.Location = new System.Drawing.Point(665, 50);
-            this.disconnectBtn.Name = "disconnectBtn";
-            this.disconnectBtn.Size = new System.Drawing.Size(123, 26);
-            this.disconnectBtn.TabIndex = 3;
-            this.disconnectBtn.Text = "Se déconnecter";
-            this.disconnectBtn.UseVisualStyleBackColor = true;
-            // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.myAlbumsPage);
@@ -91,6 +80,19 @@ namespace App
             this.myAlbumsPage.TabIndex = 0;
             this.myAlbumsPage.Text = "Albums possédés";
             this.myAlbumsPage.UseVisualStyleBackColor = true;
+            this.myAlbumsPage.Click += new System.EventHandler(this.myAlbumsPage_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // marketAlbumsPage
             // 
@@ -113,25 +115,12 @@ namespace App
             this.wishesPage.UseVisualStyleBackColor = true;
             this.wishesPage.UseWaitCursor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainTabControl);
-            this.Controls.Add(this.disconnectBtn);
             this.Controls.Add(this.currentUserLabel);
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
@@ -149,7 +138,6 @@ namespace App
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label currentUserLabel;
-        private System.Windows.Forms.Button disconnectBtn;
         private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage myAlbumsPage;
         private System.Windows.Forms.TabPage marketAlbumsPage;

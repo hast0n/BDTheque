@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DAL;
+using DAL.Repositories;
 using DAL.Services;
 using Domain;
 

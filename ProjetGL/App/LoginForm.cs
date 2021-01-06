@@ -67,8 +67,13 @@ namespace App
 
         private void connectBtn_Click(object sender, EventArgs e)
         {
-            MainForm mainform = new MainForm(User, );
+            //MainForm mainform = new MainForm(User);
             this.Close();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
