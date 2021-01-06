@@ -22,7 +22,7 @@ namespace App
         private void loginButton_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text.Trim().ToLower();
-            string pswHash = GetSHA256Hash(passwordTextBox.Text);
+            string pswHash = SHA256Crypto.GetHash(passwordTextBox.Text);
 
             var result = _userRepository.GetUser(username, pswHash);
 
@@ -39,41 +39,20 @@ namespace App
             wrongCredInfoLabel.Visible = true;
         }
 
-        private string GetSHA256Hash(string clear)
-        {
-            // https://stackoverflow.com/a/17001289
-            StringBuilder Sb = new StringBuilder();
+        //private void Title_Click(object sender, EventArgs e)
+        //{
 
-            using (SHA256 hash = SHA256.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                byte[] result = hash.ComputeHash(enc.GetBytes(clear));
+        //}
 
-                foreach (byte b in result) Sb.Append(b.ToString("x2"));
-            }
+        //private void label3_Click(object sender, EventArgs e)
+        //{
 
-            return Sb.ToString();
-        }
+        //}
 
-        private void Title_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void connectBtn_Click(object sender, EventArgs e)
-        {
-            //MainForm mainform = new MainForm(User);
-            this.Close();
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        //private void connectBtn_Click(object sender, EventArgs e)
+        //{
+        //    MainForm mainform = new MainForm(User, );
+        //    this.Close();
+        //}
     }
 }

@@ -5,7 +5,7 @@ using Domain;
 
 namespace DAL.Repositories
 {
-    class AlbumRepository :Repository, IAlbumRepository
+    public class AlbumRepository : Repository, IAlbumRepository
     {
         public List<Album> GetAll()
         {
