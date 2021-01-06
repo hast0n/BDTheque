@@ -25,12 +25,11 @@ namespace DAL.Repositories
 
         public User GetUser(string email, string passwordHash)
         {
-            var result = Session.Query<User>()
-                .Where(u =>
+            return Session
+                .Query<User>()
+                .SingleOrDefault(u => 
                     u.Email.Equals(email) &&
-                    u.PasswordHash.Equals(passwordHash))
-                .ToList();
-            return result.Count > 0 ? result[0] : null;
+                    u.PasswordHash.Equals(passwordHash));
         }
     }
 }

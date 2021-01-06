@@ -16,6 +16,36 @@
     <property name="Privilege" column="user_privilege"/>
 
     <!-- Mapping des associations de la classe -->
+    <bag name="LikedAlbums" table="user_album">
+      <key column="user_id"/>
+      <one-to-many class="Album" column="album_id"/>
+      <filter name="" condition="user_like = :liked"/>
+    </bag>
+
+    <bag name="WishedAlbums" table="user_album">
+      <key column="user_id"/>
+      <one-to-many class="Album" column="album_id"/>
+      <filter name="wishedAlbum" condition="user_wish = :wished"/>
+    </bag>
+
+    <bag name="OwnedAlbums" table="user_album">
+      <key column="user_id"/>
+      <one-to-many class="Album" column="album_id"/>
+      <filter name="ownedAlbum" condition="user_own = :owned"/>
+    </bag>
 
   </class>
+
+  <filter-def name="likedAlbum">
+    <filter-param name="liked" type="System.Boolean"/>
+  </filter-def>
+
+  <filter-def name="wishedAlbum">
+    <filter-param name="wished" type="System.Boolean"/>
+  </filter-def>
+
+  <filter-def name="ownedAlbum">
+    <filter-param name="owned" type="System.Boolean"/>
+  </filter-def>
+
 </hibernate-mapping>

@@ -39,8 +39,9 @@ namespace Domain
             Authors = authors;
             Genres = genres;
             Series = series;
+            Category = category;
         }
 
-        public override string ToString() => $"{Title}, <A définir>";
+        public override string ToString() => $"{Title}, {string.Join(" & ", Category)}, {Publisher}";
     }
 }

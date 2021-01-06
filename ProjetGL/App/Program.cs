@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DAL;
+using DAL.Repositories;
 using DAL.Services;
 using Domain;
 
@@ -19,7 +20,8 @@ namespace App
 
             //DialogResult result;
             //User user;
-            
+
+            IAlbumRepository albumRepo = new AlbumRepository();
             IUserRepository userRepo = new UserRepository();
             //using (var loginForm = new LoginForm(userRepo))
             //{
@@ -31,8 +33,12 @@ namespace App
             //{
             //    Application.Run(new Mainform(user));
             //}
-
-            Application.Run(new MainForm(userRepo.GetUser("mdevreese@ensc.fr", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17")));
+            
+            // Admin Profile
+            Application.Run(new MainForm(userRepo.GetUser("mdevreese@ensc.fr", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17"), albumRepo));
+            
+            // User Profile
+            // Application.Run(new MainForm(userRepo.GetUser("toto@lambada.com", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17"), albumRepo));
         }
     }
 }

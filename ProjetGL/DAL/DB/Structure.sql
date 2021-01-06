@@ -5,6 +5,7 @@ drop table if exists category;
 drop table if exists author;
 drop table if exists publisher;
 drop table if exists series;
+drop table if exists user_album;
 
 create table `user` (
     user_id integer not null primary key auto_increment,
@@ -22,6 +23,7 @@ create table album (
 	album_isbn varchar(200) not null,
 	album_publisher varchar(200) not null,
 	album_series varchar(200) not null,
+	album_description text,
 	album_cover blob not null,
 	category_id integer not null,
 );
@@ -56,7 +58,28 @@ create table user_album (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
 	user_id integer not null,
-	user_own boolean not null,
-	user_wish boolean not null,
-	user_like boolean not null
+	user_own boolean,
+	user_wish boolean,
+	user_like boolean
 );
+
+#create table user_own_album (
+#	id integer not null primary key auto_increment,
+#	album_id integer not null,
+#	user_id integer not null,
+#	user_own boolean not null
+#);
+#
+#create table user_wish_album (
+#	id integer not null primary key auto_increment,
+#	album_id integer not null,
+#	user_id integer not null,
+#	user_wish boolean not null
+#);
+#
+#create table user_like_album (
+#	id integer not null primary key auto_increment,
+#	album_id integer not null,
+#	user_id integer not null,
+#	user_like boolean not null
+#);
