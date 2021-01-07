@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DAL.Services;
+﻿using DAL.Services;
 using Domain;
+using System;
+using System.Windows.Forms;
 
 namespace App
 {
@@ -24,20 +17,6 @@ namespace App
             _user = user;
             _albumRepository = albumRepo;
             currentUserLabel.Text = user.FirstName + " " + user.LastName;
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void RefreshUserView()
-        {
-            
-        }
-
-        private void myAlbumsPage_Click(object sender, EventArgs e)
-        {
 
         }
     }

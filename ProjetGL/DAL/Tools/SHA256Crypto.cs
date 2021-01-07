@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace DAL.Services
+namespace DAL.Tools
 {
     public static class SHA256Crypto
     {

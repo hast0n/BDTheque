@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using DAL;
+using DAL.Tools;
 using Domain;
 
 namespace App
@@ -38,21 +39,5 @@ namespace App
         {
             wrongCredInfoLabel.Visible = true;
         }
-
-        //private void Title_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void connectBtn_Click(object sender, EventArgs e)
-        //{
-        //    MainForm mainform = new MainForm(User, );
-        //    this.Close();
-        //}
     }
 }

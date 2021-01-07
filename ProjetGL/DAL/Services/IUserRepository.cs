@@ -18,9 +18,9 @@ namespace DAL.Services
         User GetUser(string email, string passwordHash);
 
         /// <summary>
-        /// Persist new user in database
+        /// Save or edit user in storage
         /// </summary>
-        /// <param name="user">The user object</param>
-        void AddUser(User user);
+        /// <param name="user">The user object to save</param>
+        void Save(User user);
     }
 }
