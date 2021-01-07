@@ -36,6 +36,7 @@ namespace App
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.marketAlbumsPage = new System.Windows.Forms.TabPage();
             this.wishesPage = new System.Windows.Forms.TabPage();
+            this.AlbumFormBtn = new System.Windows.Forms.Button();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -115,11 +116,22 @@ namespace App
             this.wishesPage.UseVisualStyleBackColor = true;
             this.wishesPage.UseWaitCursor = true;
             // 
+            // AlbumFormBtn
+            // 
+            this.AlbumFormBtn.Location = new System.Drawing.Point(619, 133);
+            this.AlbumFormBtn.Name = "AlbumFormBtn";
+            this.AlbumFormBtn.Size = new System.Drawing.Size(117, 23);
+            this.AlbumFormBtn.TabIndex = 5;
+            this.AlbumFormBtn.Text = "un album ";
+            this.AlbumFormBtn.UseVisualStyleBackColor = true;
+            this.AlbumFormBtn.Click += new System.EventHandler(this.AlbumFormBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AlbumFormBtn);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.currentUserLabel);
             this.Controls.Add(this.label1);
@@ -143,5 +155,6 @@ namespace App
         private System.Windows.Forms.TabPage marketAlbumsPage;
         private System.Windows.Forms.TabPage wishesPage;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button AlbumFormBtn;
     }
 }

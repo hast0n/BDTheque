@@ -62,7 +62,7 @@ namespace App
             // usernameTextBox
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(289, 89);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(132, 22);
             this.usernameTextBox.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace App
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(289, 135);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(132, 22);
             this.passwordTextBox.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace App
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(289, 190);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(133, 28);
             this.loginButton.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace App
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LoginForm_Load);

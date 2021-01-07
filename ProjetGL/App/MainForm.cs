@@ -16,13 +16,12 @@ namespace App
     {
         private readonly User _user;
         private IAlbumRepository _albumRepository;
-
-        public MainForm(User user, IAlbumRepository albumRepo)
+        public MainForm(User user)//, IAlbumRepository albumRepo)
         {
             InitializeComponent();
 
             _user = user;
-            _albumRepository = albumRepo;
+            //_albumRepository = albumRepo;
             currentUserLabel.Text = user.FirstName + " " + user.LastName;
 
         }
@@ -31,7 +30,7 @@ namespace App
         {
 
         }
-        private void RefreshUserView()
+        private void RefreshAlbumViews()
         {
             
         }
@@ -39,6 +38,15 @@ namespace App
         private void myAlbumsPage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AlbumFormBtn_Click(object sender, EventArgs e)
+        {
+            AlbumForm albumForm = new AlbumForm();
+            if (albumForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

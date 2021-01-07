@@ -15,7 +15,7 @@
     <property name="PasswordHash" column="user_hash" not-null="true"/>
     <property name="Privilege" column="user_privilege"/>
 
-    <!-- Mapping des associations de la classe -->
+    <!-- Mapping des associations de la classe --><!--
     <bag name="LikedAlbums" table="user_album">
       <key column="user_id"/>
       <one-to-many class="Album" column="album_id"/>
@@ -32,11 +32,11 @@
       <key column="user_id"/>
       <one-to-many class="Album" column="album_id"/>
       <filter name="ownedAlbum" condition="user_own = :owned"/>
-    </bag>
+    </bag>-->
 
   </class>
 
-  <filter-def name="likedAlbum">
+  <!--<filter-def name="likedAlbum">
     <filter-param name="liked" type="System.Boolean"/>
   </filter-def>
 
@@ -46,6 +46,6 @@
 
   <filter-def name="ownedAlbum">
     <filter-param name="owned" type="System.Boolean"/>
-  </filter-def>
+  </filter-def>-->
 
 </hibernate-mapping>

@@ -34,9 +34,9 @@ namespace DAL
                 {
                     session = SessionFactory.OpenSession();
 
-                    session.EnableFilter("likedAlbum").SetParameter("liked", "true");
-                    session.EnableFilter("wishedAlbum").SetParameter("wished", "true");
-                    session.EnableFilter("ownedAlbum").SetParameter("owned", "true");
+                    //session.EnableFilter("likedAlbum").SetParameter("liked", "true");
+                    //session.EnableFilter("wishedAlbum").SetParameter("wished", "true");
+                    //session.EnableFilter("ownedAlbum").SetParameter("owned", "true");
                 }
 
                 return session;
