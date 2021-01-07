@@ -18,8 +18,8 @@ create table `user` (
 
 create table album (
 	album_id integer not null primary key auto_increment,
-	album_release_date datetime not null,
 	album_title varchar(200) not null,
+	album_author integer not null,
 	album_isbn varchar(200) not null,
 	album_publisher varchar(200) not null,
 	album_series varchar(200) not null,
