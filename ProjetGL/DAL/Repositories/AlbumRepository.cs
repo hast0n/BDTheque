@@ -28,12 +28,12 @@ namespace DAL.Repositories
         public void GetOwnedAlbums(User user)//IList<Album>
         {
             var retour = Session.CreateSQLQuery("SELECT `album_id` FROM `user_album` WHERE `user_id`=1 AND `user_own`=1;");
-            return;
+            
         }
         public void GetWishesAlbums(User user)//IList<Album>
         {
             var retour = Session.CreateSQLQuery("SELECT `album_id` FROM `user_album` WHERE `user_id`=1 AND `user_own`=1;");
-            return;
+            
         }
     }
 }

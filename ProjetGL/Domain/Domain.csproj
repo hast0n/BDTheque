@@ -52,10 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\Cover.hbm.xml" />
-    <Content Include="Mapping\Series.hbm.xml" />
-    <Content Include="Mapping\Genre.hbm.xml" />
-    <Content Include="Mapping\Category.hbm.xml" />
-    <Content Include="Mapping\Author.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Series.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Genre.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Category.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Author.hbm.xml" />
     <EmbeddedResource Include="Mapping\Album.hbm.xml" />
   </ItemGroup>
   <ItemGroup>

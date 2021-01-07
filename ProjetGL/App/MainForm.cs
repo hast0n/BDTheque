@@ -29,6 +29,7 @@ namespace App
             //market panel
             //on recupere la liste
             IList<Album> liste = _albumRepository.GetMarketAlbums();
+            _albumRepository.GetOwnedAlbums(_user);
             //on affiche la liste
             for (int i=0;i<liste.Count;i++)
             {

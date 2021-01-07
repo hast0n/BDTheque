@@ -13,9 +13,18 @@
     <property name="Isbn" column="album_isbn" not-null="true"/>
     <property name="Publisher" column="album_publisher" not-null="true"/>
     <property name="Description" column="album_description"/>
-    <property name="Series" column="album_series"/>
-    <property name="Category" column="category_id"/>
     <!-- Mapping des associations de la classe -->
+    <many-to-one name="Category" class="Category" column="category_id" not-null="true"/>
+    <many-to-one name="Series" class="Series" column="series_id" not-null="true"/>
+    <bag name="Authors" table="album_author">
+      <key column="album_id"/>
+      <many-to-many class="Author" column="author_id"/>
+    </bag>
+    <bag name="Genres" table="album_genre">
+      <key column="album_id"/>
+      <many-to-many class="Genre" column="genre_id"/>
+    </bag>
+
 
   </class>
 </hibernate-mapping>

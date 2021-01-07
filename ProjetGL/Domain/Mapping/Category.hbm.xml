@@ -10,8 +10,11 @@
       <generator class="native"></generator>
     </id>
     <property name="Name" column="category_name" not-null="true"/>
-
     <!-- Mapping des associations de la classe -->
+    <bag name="Albums" inverse="false" lazy="true">
+      <key column="album_id"/>
+      <one-to-many class="Album"/>
+    </bag>
 
   </class>
 </hibernate-mapping>
