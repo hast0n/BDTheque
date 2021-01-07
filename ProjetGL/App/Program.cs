@@ -18,8 +18,8 @@ namespace App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //DialogResult result;
-            //User user;
+            DialogResult result;
+            User user;
 
             IAlbumRepository albumRepo = new AlbumRepository();
             IUserRepository userRepo = new UserRepository();
@@ -31,12 +31,12 @@ namespace App
 
             //if (result == DialogResult.OK)
             //{
-            //    Application.Run(new Mainform(user));
+            //    Application.Run(new MainForm(user));
             //}
-            
+
             // Admin Profile
-            Application.Run(new MainForm(userRepo.GetUser("mdevreese@ensc.fr", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17"), albumRepo));
-            
+            Application.Run(new MainForm(userRepo.GetUser("mdevreese@ensc.fr", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17")));//, albumRepo
+
             // User Profile
             // Application.Run(new MainForm(userRepo.GetUser("toto@lambada.com", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17"), albumRepo));
         }
