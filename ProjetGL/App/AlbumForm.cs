@@ -28,7 +28,7 @@ namespace App
             //essai de mise d'un blob en BDD
             _blobImgRepository.Save(blobimg);
             //essai de requete d'un album en BDD
-            Cover newBlobImg = _blobImgRepository.GetCover(2);
+            Cover newBlobImg = _blobImgRepository.GetCover(1);
             //affichage
             stream = new MemoryStream(newBlobImg.File);
             stream.Position = 0;

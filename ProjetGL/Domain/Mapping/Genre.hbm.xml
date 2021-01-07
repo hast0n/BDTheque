@@ -12,6 +12,10 @@
     <property name="Name" column="genre_name" not-null="true"/>
 
     <!-- Mapping des associations de la classe -->
+    <bag name="Albums" table="album_genre">
+      <key column="genre_id"/>
+      <many-to-many class="Album" column="album_id"/>
+    </bag>
 
   </class>
 </hibernate-mapping>
