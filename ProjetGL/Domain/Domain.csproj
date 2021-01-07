@@ -56,7 +56,7 @@
     <Content Include="Mapping\Genre.hbm.xml" />
     <Content Include="Mapping\Category.hbm.xml" />
     <Content Include="Mapping\Author.hbm.xml" />
-    <Content Include="Mapping\Album.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Album.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\User.hbm.xml" />

@@ -33,13 +33,16 @@ namespace App
             this.currentUserLabel = new System.Windows.Forms.Label();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.myAlbumsPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.marketAlbumsPage = new System.Windows.Forms.TabPage();
             this.wishesPage = new System.Windows.Forms.TabPage();
             this.AlbumFormBtn = new System.Windows.Forms.Button();
+            this.possessedLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.marketLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.wishesLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.marketAlbumsPage.SuspendLayout();
+            this.wishesPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +76,7 @@ namespace App
             // 
             // myAlbumsPage
             // 
-            this.myAlbumsPage.Controls.Add(this.dataGridView1);
+            this.myAlbumsPage.Controls.Add(this.possessedLayoutPanel);
             this.myAlbumsPage.Location = new System.Drawing.Point(4, 25);
             this.myAlbumsPage.Name = "myAlbumsPage";
             this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -83,20 +86,9 @@ namespace App
             this.myAlbumsPage.UseVisualStyleBackColor = true;
             this.myAlbumsPage.Click += new System.EventHandler(this.myAlbumsPage_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // marketAlbumsPage
             // 
+            this.marketAlbumsPage.Controls.Add(this.marketLayoutPanel);
             this.marketAlbumsPage.Location = new System.Drawing.Point(4, 25);
             this.marketAlbumsPage.Name = "marketAlbumsPage";
             this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -107,6 +99,7 @@ namespace App
             // 
             // wishesPage
             // 
+            this.wishesPage.Controls.Add(this.wishesLayoutPanel);
             this.wishesPage.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.wishesPage.Location = new System.Drawing.Point(4, 25);
             this.wishesPage.Name = "wishesPage";
@@ -126,6 +119,27 @@ namespace App
             this.AlbumFormBtn.UseVisualStyleBackColor = true;
             this.AlbumFormBtn.Click += new System.EventHandler(this.AlbumFormBtn_Click);
             // 
+            // possessedLayoutPanel
+            // 
+            this.possessedLayoutPanel.Location = new System.Drawing.Point(82, 63);
+            this.possessedLayoutPanel.Name = "possessedLayoutPanel";
+            this.possessedLayoutPanel.Size = new System.Drawing.Size(429, 278);
+            this.possessedLayoutPanel.TabIndex = 0;
+            // 
+            // marketLayoutPanel
+            // 
+            this.marketLayoutPanel.Location = new System.Drawing.Point(48, 40);
+            this.marketLayoutPanel.Name = "marketLayoutPanel";
+            this.marketLayoutPanel.Size = new System.Drawing.Size(367, 255);
+            this.marketLayoutPanel.TabIndex = 0;
+            // 
+            // wishesLayoutPanel
+            // 
+            this.wishesLayoutPanel.Location = new System.Drawing.Point(94, 96);
+            this.wishesLayoutPanel.Name = "wishesLayoutPanel";
+            this.wishesLayoutPanel.Size = new System.Drawing.Size(384, 207);
+            this.wishesLayoutPanel.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,7 +154,8 @@ namespace App
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTabControl.ResumeLayout(false);
             this.myAlbumsPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.marketAlbumsPage.ResumeLayout(false);
+            this.wishesPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +169,9 @@ namespace App
         private System.Windows.Forms.TabPage myAlbumsPage;
         private System.Windows.Forms.TabPage marketAlbumsPage;
         private System.Windows.Forms.TabPage wishesPage;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button AlbumFormBtn;
+        private System.Windows.Forms.FlowLayoutPanel possessedLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel marketLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel wishesLayoutPanel;
     }
 }
