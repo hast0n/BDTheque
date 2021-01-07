@@ -19,13 +19,13 @@ create table `user` (
 create table album (
 	album_id integer not null primary key auto_increment,
 	album_title varchar(200) not null,
-	album_author integer not null,
 	album_isbn varchar(200) not null,
 	album_publisher varchar(200) not null,
-	album_series varchar(200) not null,
 	album_description text,
-	cover_id integer,
+	author_id integer not null,
 	category_id integer not null,
+	series_id integer,
+	cover_id integer
 );
 
 create table genre (
@@ -55,8 +55,14 @@ create table cover (
 
 create table album_genre (
 	id integer not null primary key auto_increment,
-	album_id integer not null
+	album_id integer not null,
 	genre_id integer not null
+);
+
+create table album_author (
+	id integer not null primary key auto_increment,
+	album_id integer not null,
+	author_id integer not null
 );
 
 create table user_album (
