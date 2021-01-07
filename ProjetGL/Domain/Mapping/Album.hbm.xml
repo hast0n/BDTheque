@@ -11,8 +11,10 @@
     </id>
     <property name="Title" column="album_title" not-null="true"/>
     <property name="Isbn" column="album_isbn" not-null="true"/>
-    <property name="ReleaseDate" column="album_relaese_date" not-null="true"/>
     <property name="Publisher" column="album_publisher" not-null="true"/>
+    <property name="Description" column="album_description"/>
+    <property name="Series" column="album_series"/>
+    <property name="Category" column="category_id"/>
     <!-- Mapping des associations de la classe -->
 
   </class>

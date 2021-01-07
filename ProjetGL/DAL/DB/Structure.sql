@@ -24,7 +24,7 @@ create table album (
 	album_publisher varchar(200) not null,
 	album_series varchar(200) not null,
 	album_description text,
-	album_cover blob not null,
+	cover_id integer,
 	category_id integer not null,
 );
 
@@ -46,6 +46,11 @@ create table author (
 create table series (
 	series_id integer not null primary key auto_increment,
 	series_name varchar(200) not null
+);
+
+create table cover (
+	cover_id integer not null primary key auto_increment,
+	cover_file blob not null
 );
 
 create table album_genre (

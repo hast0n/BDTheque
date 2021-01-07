@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using DAL;
+using DAL.Tools;
 using Domain;
 
 namespace App

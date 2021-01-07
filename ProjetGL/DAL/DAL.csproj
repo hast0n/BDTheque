@@ -76,7 +76,7 @@
     <Compile Include="Services\IAlbumRepository.cs" />
     <Compile Include="Services\IUserRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Services\SHA256Crypto.cs" />
+    <Compile Include="Tools\SHA256Crypto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
