@@ -9,6 +9,7 @@
     <id name="Id" column="cover_id" type="int">
       <generator class="native"></generator>
     </id>
+    
     <property name="File" column="cover_file" not-null="true"/>
 
     <!-- Mapping des associations de la classe   type="binary" -->

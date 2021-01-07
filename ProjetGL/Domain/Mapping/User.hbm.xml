@@ -9,6 +9,7 @@
     <id name="Id" column="user_id" type="int">
       <generator class="native"></generator>
     </id>
+
     <property name="LastName" column="user_last_name" not-null="true"/>
     <property name="FirstName" column="user_first_name" not-null="true"/>
     <property name="Email" column="user_mail" not-null="true"/>

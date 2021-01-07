@@ -22,7 +22,6 @@ create table album (
 	album_isbn varchar(200) not null,
 	album_publisher varchar(200) not null,
 	album_description text,
-	author_id integer not null,
 	category_id integer not null,
 	series_id integer,
 	cover_id integer
