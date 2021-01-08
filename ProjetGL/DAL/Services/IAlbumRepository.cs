@@ -7,8 +7,6 @@ namespace DAL.Services
     {
         void Save(Album album);
         Album GetAlbumById(int number);
-        IList<Album> GetMarketAlbums();
-        void GetOwnedAlbums(User user);//IList<Album>
-        void GetWishesAlbums(User user);//IList<Album>
+        IList<Album> GetAll();
     }
 }
