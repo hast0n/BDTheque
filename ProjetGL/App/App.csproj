@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlbumDetailView.Designer.cs">
+      <DependentUpon>AlbumDetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlbumForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlbumDetailView.resx">
+      <DependentUpon>AlbumDetailView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlbumForm.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
     </EmbeddedResource>
