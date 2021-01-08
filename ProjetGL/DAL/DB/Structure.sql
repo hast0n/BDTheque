@@ -3,9 +3,14 @@ drop table if exists album;
 drop table if exists genre;
 drop table if exists category;
 drop table if exists author;
-drop table if exists publisher;
 drop table if exists series;
 drop table if exists user_album;
+drop table if exists cover;
+drop table if exists album_author;
+drop table if exists album_genre;
+drop table if exists user_like_album;
+drop table if exists user_own_album;
+drop table if exists user_wish_album;
 
 create table `user` (
     user_id integer not null primary key auto_increment,
@@ -64,32 +69,29 @@ create table album_author (
 	author_id integer not null
 );
 
-create table user_album (
+#create table user_album (
+#	id integer not null primary key auto_increment,
+#	album_id integer not null,
+#	user_id integer not null,
+#	user_own boolean,
+#	user_wish boolean,
+#	user_like boolean
+#);
+
+create table user_own_album (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
 	user_id integer not null,
-	user_own boolean,
-	user_wish boolean,
-	user_like boolean
 );
 
-#create table user_own_album (
-#	id integer not null primary key auto_increment,
-#	album_id integer not null,
-#	user_id integer not null,
-#	user_own boolean not null
-#);
-#
-#create table user_wish_album (
-#	id integer not null primary key auto_increment,
-#	album_id integer not null,
-#	user_id integer not null,
-#	user_wish boolean not null
-#);
-#
-#create table user_like_album (
-#	id integer not null primary key auto_increment,
-#	album_id integer not null,
-#	user_id integer not null,
-#	user_like boolean not null
-#);
+create table user_wish_album (
+	id integer not null primary key auto_increment,
+	album_id integer not null,
+	user_id integer not null,
+);
+
+create table user_like_album (
+	id integer not null primary key auto_increment,
+	album_id integer not null,
+	user_id integer not null,
+);
