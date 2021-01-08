@@ -33,16 +33,18 @@ namespace App
             this.currentUserLabel = new System.Windows.Forms.Label();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.myAlbumsPage = new System.Windows.Forms.TabPage();
-            this.marketAlbumsPage = new System.Windows.Forms.TabPage();
-            this.wishesPage = new System.Windows.Forms.TabPage();
-            this.AlbumFormBtn = new System.Windows.Forms.Button();
             this.possessedLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.marketAlbumsPage = new System.Windows.Forms.TabPage();
             this.marketLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.wishesPage = new System.Windows.Forms.TabPage();
             this.wishesLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.AlbumFormBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
             this.marketAlbumsPage.SuspendLayout();
             this.wishesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +88,13 @@ namespace App
             this.myAlbumsPage.UseVisualStyleBackColor = true;
             this.myAlbumsPage.Click += new System.EventHandler(this.myAlbumsPage_Click);
             // 
+            // possessedLayoutPanel
+            // 
+            this.possessedLayoutPanel.Location = new System.Drawing.Point(82, 63);
+            this.possessedLayoutPanel.Name = "possessedLayoutPanel";
+            this.possessedLayoutPanel.Size = new System.Drawing.Size(429, 278);
+            this.possessedLayoutPanel.TabIndex = 0;
+            // 
             // marketAlbumsPage
             // 
             this.marketAlbumsPage.Controls.Add(this.marketLayoutPanel);
@@ -96,6 +105,13 @@ namespace App
             this.marketAlbumsPage.TabIndex = 1;
             this.marketAlbumsPage.Text = "Albums sur le marché ";
             this.marketAlbumsPage.UseVisualStyleBackColor = true;
+            // 
+            // marketLayoutPanel
+            // 
+            this.marketLayoutPanel.Location = new System.Drawing.Point(48, 40);
+            this.marketLayoutPanel.Name = "marketLayoutPanel";
+            this.marketLayoutPanel.Size = new System.Drawing.Size(367, 255);
+            this.marketLayoutPanel.TabIndex = 0;
             // 
             // wishesPage
             // 
@@ -109,6 +125,14 @@ namespace App
             this.wishesPage.UseVisualStyleBackColor = true;
             this.wishesPage.UseWaitCursor = true;
             // 
+            // wishesLayoutPanel
+            // 
+            this.wishesLayoutPanel.Location = new System.Drawing.Point(94, 96);
+            this.wishesLayoutPanel.Name = "wishesLayoutPanel";
+            this.wishesLayoutPanel.Size = new System.Drawing.Size(384, 207);
+            this.wishesLayoutPanel.TabIndex = 0;
+            this.wishesLayoutPanel.UseWaitCursor = true;
+            // 
             // AlbumFormBtn
             // 
             this.AlbumFormBtn.Location = new System.Drawing.Point(619, 133);
@@ -119,32 +143,20 @@ namespace App
             this.AlbumFormBtn.UseVisualStyleBackColor = true;
             this.AlbumFormBtn.Click += new System.EventHandler(this.AlbumFormBtn_Click);
             // 
-            // possessedLayoutPanel
+            // pictureBox1
             // 
-            this.possessedLayoutPanel.Location = new System.Drawing.Point(82, 63);
-            this.possessedLayoutPanel.Name = "possessedLayoutPanel";
-            this.possessedLayoutPanel.Size = new System.Drawing.Size(429, 278);
-            this.possessedLayoutPanel.TabIndex = 0;
-            // 
-            // marketLayoutPanel
-            // 
-            this.marketLayoutPanel.Location = new System.Drawing.Point(48, 40);
-            this.marketLayoutPanel.Name = "marketLayoutPanel";
-            this.marketLayoutPanel.Size = new System.Drawing.Size(367, 255);
-            this.marketLayoutPanel.TabIndex = 0;
-            // 
-            // wishesLayoutPanel
-            // 
-            this.wishesLayoutPanel.Location = new System.Drawing.Point(94, 96);
-            this.wishesLayoutPanel.Name = "wishesLayoutPanel";
-            this.wishesLayoutPanel.Size = new System.Drawing.Size(384, 207);
-            this.wishesLayoutPanel.TabIndex = 0;
+            this.pictureBox1.Location = new System.Drawing.Point(576, 189);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 189);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.AlbumFormBtn);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.currentUserLabel);
@@ -156,6 +168,7 @@ namespace App
             this.myAlbumsPage.ResumeLayout(false);
             this.marketAlbumsPage.ResumeLayout(false);
             this.wishesPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +186,6 @@ namespace App
         private System.Windows.Forms.FlowLayoutPanel possessedLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel marketLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel wishesLayoutPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

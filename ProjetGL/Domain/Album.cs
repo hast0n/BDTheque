@@ -14,15 +14,22 @@ namespace Domain
         public virtual string Isbn { get; set; }
         public virtual string Publisher { get; set; }
         public virtual string Description { get; set; }
-        public virtual List<Author> Authors { get; set; }
-        public virtual List<Genre> Genres { get; set; }
+        public virtual IList<Author> Authors { get; set; }
+        public virtual IList<Genre> Genres { get; set; }
         public virtual Series Series { get; set; }
         public virtual Category Category { get; set; }
+        public virtual IList<Cover> CoverList { get; set; }
 
+        public virtual Cover Cover
+        {
+            get { return CoverList[0]; }
+            set { CoverList[0] = value;  }
+        }
 
         public Album()
         {
-            
+            CoverList = new List<Cover>();
+            CoverList.Add(new Cover());
         }
 
         public Album(

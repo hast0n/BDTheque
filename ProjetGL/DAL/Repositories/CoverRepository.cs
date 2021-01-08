@@ -12,7 +12,7 @@ namespace DAL.Repositories
         {
             return Session.Query<Cover>().ToList();
         }
-        public Cover GetCover(int number)
+        public Cover GetCoverById(int number)
         {
             string requete = "select c from Cover c where c.Id=?";
             var cover = Session.CreateQuery(requete).SetInt32(0, number).List<Cover>();

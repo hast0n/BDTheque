@@ -18,21 +18,21 @@ namespace App
     public partial class AlbumForm : Form
     {
         private readonly ICoverRepository _blobImgRepository = new CoverRepository();
-        public AlbumForm()
+        public AlbumForm(Album album)
         {
             InitializeComponent();
-            Cover blobimg = new Cover("imgBLOB.png");
-            MemoryStream stream = new MemoryStream(blobimg.File);
+            //MemoryStream stream = new MemoryStream(blobimg.File);
+            //stream.Position = 0;
+            //pictureBox1.Image = Image.FromStream(stream);
+            ////essai de mise d'un blob en BDD
+            //_blobImgRepository.Save(blobimg);
+            //essai de requete d'un album en BDD
+            //Cover newBlobImg = _blobImgRepository.GetCoverById(album.Id);
+            //affichage
+            MemoryStream stream;
+            stream = new MemoryStream(album.Cover.File);
             stream.Position = 0;
             pictureBox1.Image = Image.FromStream(stream);
-            //essai de mise d'un blob en BDD
-            _blobImgRepository.Save(blobimg);
-            //essai de requete d'un album en BDD
-            Cover newBlobImg = _blobImgRepository.GetCover(1);
-            //affichage
-            stream = new MemoryStream(newBlobImg.File);
-            stream.Position = 0;
-            pictureBox2.Image = Image.FromStream(stream);
         }
 
         private void AlbumForm_Load(object sender, EventArgs e)

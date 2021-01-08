@@ -19,7 +19,13 @@ namespace DAL.Repositories
         }
         public Album GetAlbumById(int id)
         {
-            return Session.Query<Album>().SingleOrDefault(a => a.Id == id);
+            //string requete = "select a from Album a where a.Id=?";
+            var album = Session.Query<Album>().SingleOrDefault(a => a.Id == id);
+
+            //var album  = Session.Query<Album>().ToList().Where(a => a.Id == id).FirstOrDefault();
+            //var album = Session.CreateQuery(requete).SetInt32(0, id).List<Album>();
+            return album;
+            //return Session.Query<Album>().SingleOrDefault(a => a.Id == id);
         }
         public IList<Album> GetMarketAlbums()
         {
@@ -27,8 +33,9 @@ namespace DAL.Repositories
         }
         public void GetOwnedAlbums(User user)//IList<Album>
         {
-            var retour = Session.CreateSQLQuery("SELECT `album_id` FROM `user_album` WHERE `user_id`=1 AND `user_own`=1;");
-            
+            string requete = "select a from User a";
+            var cover = Session.CreateQuery(requete).SetInt32(0, user.Id).List<Cover>();
+            return;
         }
         public void GetWishesAlbums(User user)//IList<Album>
         {

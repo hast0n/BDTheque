@@ -23,13 +23,13 @@
       <!--<filter name="likedAlbum" condition="user_like = :liked"/>-->
     </bag>
 
-    <bag name="WishedAlbums" table="user_own_album">
+    <bag name="WishedAlbums" table="user_wish_album">
       <key column="user_id"/>
       <many-to-many class="Album" column="album_id"/>
       <!--<filter name="wishedAlbum" condition="user_wish = :wished"/>-->
     </bag>
 
-    <bag name="OwnedAlbums" table="user_wish_album">
+    <bag name="OwnedAlbums" table="user_own_album">
       <key column="user_id"/>
       <many-to-many class="Album" column="album_id"/>
       <!--<filter name="ownedAlbum" condition="user_own = :owned"/>-->

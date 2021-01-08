@@ -31,5 +31,6 @@ namespace DAL.Repositories
                     u.Email.Equals(email) &&
                     u.PasswordHash.Equals(passwordHash));
         }
+        
     }
 }
