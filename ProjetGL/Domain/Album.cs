@@ -22,7 +22,12 @@ namespace Domain
 
         public virtual Cover Cover
         {
-            get { return CoverList[0]; }
+            get { if (CoverList.Count != 0)
+                {
+                    return CoverList[0];
+                }
+                else { return null; }
+                }
             set { CoverList[0] = value;  }
         }
 

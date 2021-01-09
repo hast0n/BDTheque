@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,15 @@ namespace App
             }
             descriptionLabel.Text = Album.Description;
             isbnLabel.Text = Album.Isbn;
+
+            //cover display
+            if (Album.Cover != null)
+            {
+                MemoryStream stream;
+                stream = new MemoryStream(Album.Cover.File);
+                stream.Position = 0;
+                coverPictureBox.Image = Image.FromStream(stream);
+            }
         }
     }
 }
