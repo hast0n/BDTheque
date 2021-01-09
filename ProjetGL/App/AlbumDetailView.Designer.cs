@@ -36,6 +36,7 @@ namespace App
             this.isbnInfoLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
             this.publisherLabel = new System.Windows.Forms.Label();
+            this.DetailsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@ namespace App
             // 
             this.coverPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.coverPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.coverPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.coverPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.coverPictureBox.Name = "coverPictureBox";
             this.coverPictureBox.Size = new System.Drawing.Size(243, 368);
             this.coverPictureBox.TabIndex = 0;
@@ -114,10 +115,21 @@ namespace App
             this.publisherLabel.TabIndex = 10;
             this.publisherLabel.Text = "Publisher Name";
             // 
+            // DetailsBtn
+            // 
+            this.DetailsBtn.Location = new System.Drawing.Point(271, 309);
+            this.DetailsBtn.Name = "DetailsBtn";
+            this.DetailsBtn.Size = new System.Drawing.Size(75, 23);
+            this.DetailsBtn.TabIndex = 11;
+            this.DetailsBtn.Text = "Détails";
+            this.DetailsBtn.UseVisualStyleBackColor = true;
+            this.DetailsBtn.Click += new System.EventHandler(this.DetailsBtn_Click);
+            // 
             // AlbumDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DetailsBtn);
             this.Controls.Add(this.publisherLabel);
             this.Controls.Add(this.isbnLabel);
             this.Controls.Add(this.isbnInfoLabel);
@@ -125,7 +137,7 @@ namespace App
             this.Controls.Add(this.seriesLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.coverPictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AlbumDetailView";
             this.Size = new System.Drawing.Size(864, 368);
             this.Load += new System.EventHandler(this.AlbumDetailView_Load);
@@ -144,5 +156,6 @@ namespace App
         private System.Windows.Forms.Label isbnInfoLabel;
         private System.Windows.Forms.Label isbnLabel;
         private System.Windows.Forms.Label publisherLabel;
+        private System.Windows.Forms.Button DetailsBtn;
     }
 }

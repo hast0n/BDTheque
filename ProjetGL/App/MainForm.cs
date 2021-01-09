@@ -19,6 +19,7 @@ namespace App
             _albumRepository = albumRepo;
             currentUserLabel.Text = user.ToString();
             RefreshMarketAlbum();
+            //RefreshOwnedAlbum();
         }
 
         private void RefreshMarketAlbum()
@@ -43,21 +44,15 @@ namespace App
                     DisplayStar = false
                 };
                 view.AlbumRefreshDetails();
-
                 marketFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
             }
-
-            //possessed panel
-
-            //wishes panel
         }
 
         private void RefreshOwnedAlbum()
         {
+            
             IList<Album> userOwnedAlbums = _user.OwnedAlbums;
-            IList<Album> userWishedAlbums = _user.WishedAlbums;
-            //_albumRepository.GetOwnedAlbums(_user);
 
             int i = 0;
             int y = 0;
@@ -74,9 +69,41 @@ namespace App
                     // Set custom control data
                     Album = album,
                     DisplayStar = true,
-                    IsLiked = userWishedAlbums.Contains(album)
-                };
 
+                    //??
+                    //IsLiked = userWishedAlbums.Contains(album)
+                    //??
+                };
+                view.AlbumRefreshDetails();
+                ownedFlowLayoutPanel.Controls.Add(view);
+                y += view.Height;
+            }
+        }
+        private void RefreshWishedAlbum()
+        {
+            IList<Album> userWishedAlbums = _user.WishedAlbums;
+
+            int i = 0;
+            int y = 0;
+
+            foreach (var album in userWishedAlbums)
+            {
+                // Set curstom control properties
+                AlbumDetailView view = new AlbumDetailView
+                {
+                    Location = new System.Drawing.Point(1, -1 + y),
+                    Name = $"ownedAlbumViewDetail{i}",
+                    TabIndex = i++,
+
+                    // Set custom control data
+                    Album = album,
+                    DisplayStar = true,
+
+                    //??
+                    //IsLiked = userWishedAlbums.Contains(album)
+                    //??
+                };
+                view.AlbumRefreshDetails();
                 ownedFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
             }

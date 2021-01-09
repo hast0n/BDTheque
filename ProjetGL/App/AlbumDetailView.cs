@@ -47,5 +47,14 @@ namespace App
                 coverPictureBox.Image = Image.FromStream(stream);
             }
         }
+
+        private void DetailsBtn_Click(object sender, EventArgs e)
+        {
+            AlbumForm albumForm = new AlbumForm(Album);
+            if (albumForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
