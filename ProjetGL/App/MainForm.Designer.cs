@@ -98,11 +98,14 @@ namespace App
             // 
             // marketFlowLayoutPanel
             // 
+            this.marketFlowLayoutPanel.AutoScroll = true;
+            this.marketFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.marketFlowLayoutPanel.Location = new System.Drawing.Point(7, 6);
             this.marketFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
             this.marketFlowLayoutPanel.Size = new System.Drawing.Size(929, 470);
             this.marketFlowLayoutPanel.TabIndex = 0;
+            this.marketFlowLayoutPanel.WrapContents = false;
             // 
             // wishesPage
             // 
