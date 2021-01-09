@@ -34,13 +34,11 @@ namespace App
             this.myAlbumsPage = new System.Windows.Forms.TabPage();
             this.ownedFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.marketAlbumsPage = new System.Windows.Forms.TabPage();
+            this.marketFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.wishesPage = new System.Windows.Forms.TabPage();
             this.AlbumFormBtn = new System.Windows.Forms.Button();
-            this.marketFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.albumDetailView1 = new App.AlbumDetailView();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
-            this.ownedFlowLayoutPanel.SuspendLayout();
             this.marketAlbumsPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +46,9 @@ namespace App
             // 
             this.currentUserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currentUserLabel.AutoSize = true;
-            this.currentUserLabel.Location = new System.Drawing.Point(868, 9);
-            this.currentUserLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUserLabel.Location = new System.Drawing.Point(1033, 11);
             this.currentUserLabel.Name = "currentUserLabel";
-            this.currentUserLabel.Size = new System.Drawing.Size(38, 13);
+            this.currentUserLabel.Size = new System.Drawing.Size(48, 17);
             this.currentUserLabel.TabIndex = 1;
             this.currentUserLabel.Text = "Aucun";
             // 
@@ -60,52 +57,60 @@ namespace App
             this.mainTabControl.Controls.Add(this.myAlbumsPage);
             this.mainTabControl.Controls.Add(this.marketAlbumsPage);
             this.mainTabControl.Controls.Add(this.wishesPage);
-            this.mainTabControl.Location = new System.Drawing.Point(11, 24);
-            this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
+            this.mainTabControl.Location = new System.Drawing.Point(15, 30);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(715, 418);
+            this.mainTabControl.Size = new System.Drawing.Size(953, 514);
             this.mainTabControl.TabIndex = 4;
             // 
             // myAlbumsPage
             // 
             this.myAlbumsPage.Controls.Add(this.ownedFlowLayoutPanel);
-            this.myAlbumsPage.Location = new System.Drawing.Point(4, 22);
-            this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.myAlbumsPage.Location = new System.Drawing.Point(4, 25);
+            this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.myAlbumsPage.Name = "myAlbumsPage";
-            this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.myAlbumsPage.Size = new System.Drawing.Size(707, 392);
+            this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.myAlbumsPage.Size = new System.Drawing.Size(945, 485);
             this.myAlbumsPage.TabIndex = 0;
             this.myAlbumsPage.Text = "Albums possédés";
             this.myAlbumsPage.UseVisualStyleBackColor = true;
             // 
             // ownedFlowLayoutPanel
             // 
-            this.ownedFlowLayoutPanel.Controls.Add(this.albumDetailView1);
-            this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(5, 5);
+            this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(7, 6);
+            this.ownedFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ownedFlowLayoutPanel.Name = "ownedFlowLayoutPanel";
-            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(697, 382);
+            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(929, 470);
             this.ownedFlowLayoutPanel.TabIndex = 0;
             // 
             // marketAlbumsPage
             // 
             this.marketAlbumsPage.Controls.Add(this.marketFlowLayoutPanel);
-            this.marketAlbumsPage.Location = new System.Drawing.Point(4, 22);
-            this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.marketAlbumsPage.Location = new System.Drawing.Point(4, 25);
+            this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.marketAlbumsPage.Name = "marketAlbumsPage";
-            this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.marketAlbumsPage.Size = new System.Drawing.Size(707, 392);
+            this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.marketAlbumsPage.Size = new System.Drawing.Size(945, 485);
             this.marketAlbumsPage.TabIndex = 1;
             this.marketAlbumsPage.Text = "Albums sur le marché ";
             this.marketAlbumsPage.UseVisualStyleBackColor = true;
             // 
+            // marketFlowLayoutPanel
+            // 
+            this.marketFlowLayoutPanel.Location = new System.Drawing.Point(7, 6);
+            this.marketFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
+            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(929, 470);
+            this.marketFlowLayoutPanel.TabIndex = 0;
+            // 
             // wishesPage
             // 
             this.wishesPage.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.wishesPage.Location = new System.Drawing.Point(4, 22);
-            this.wishesPage.Margin = new System.Windows.Forms.Padding(2);
+            this.wishesPage.Location = new System.Drawing.Point(4, 25);
+            this.wishesPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wishesPage.Name = "wishesPage";
-            this.wishesPage.Size = new System.Drawing.Size(707, 392);
+            this.wishesPage.Size = new System.Drawing.Size(945, 485);
             this.wishesPage.TabIndex = 2;
             this.wishesPage.Text = "Mes souhaits";
             this.wishesPage.UseVisualStyleBackColor = true;
@@ -113,44 +118,30 @@ namespace App
             // 
             // AlbumFormBtn
             // 
-            this.AlbumFormBtn.Location = new System.Drawing.Point(762, 461);
-            this.AlbumFormBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AlbumFormBtn.Location = new System.Drawing.Point(1016, 567);
+            this.AlbumFormBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AlbumFormBtn.Name = "AlbumFormBtn";
-            this.AlbumFormBtn.Size = new System.Drawing.Size(88, 19);
+            this.AlbumFormBtn.Size = new System.Drawing.Size(117, 23);
             this.AlbumFormBtn.TabIndex = 5;
             this.AlbumFormBtn.Text = "un album ";
             this.AlbumFormBtn.UseVisualStyleBackColor = true;
             this.AlbumFormBtn.Click += new System.EventHandler(this.AlbumFormBtn_Click);
             // 
-            // marketFlowLayoutPanel
-            // 
-            this.marketFlowLayoutPanel.Location = new System.Drawing.Point(5, 5);
-            this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
-            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(697, 382);
-            this.marketFlowLayoutPanel.TabIndex = 0;
-            // 
-            // albumDetailView1
-            // 
-            this.albumDetailView1.Location = new System.Drawing.Point(3, 3);
-            this.albumDetailView1.Name = "albumDetailView1";
-            this.albumDetailView1.Size = new System.Drawing.Size(648, 299);
-            this.albumDetailView1.TabIndex = 0;
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(917, 491);
+            this.ClientSize = new System.Drawing.Size(1223, 604);
             this.Controls.Add(this.AlbumFormBtn);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.currentUserLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTabControl.ResumeLayout(false);
             this.myAlbumsPage.ResumeLayout(false);
-            this.ownedFlowLayoutPanel.ResumeLayout(false);
             this.marketAlbumsPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

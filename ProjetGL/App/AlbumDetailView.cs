@@ -21,5 +21,21 @@ namespace App
         {
             InitializeComponent();
         }
+
+        private void AlbumDetailView_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void AlbumRefreshDetails()
+        {
+            titleLabel.Text = Album.Title;
+            publisherLabel.Text = Album.Publisher;
+            if (Album.Series != null)
+            {
+                seriesLabel.Text = Album.Series.Name;
+            }
+            descriptionLabel.Text = Album.Description;
+            isbnLabel.Text = Album.Isbn;
+        }
     }
 }

@@ -42,6 +42,7 @@ namespace App
                     Album = album,
                     DisplayStar = false
                 };
+                view.AlbumRefreshDetails();
 
                 marketFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
@@ -83,11 +84,16 @@ namespace App
 
         private void AlbumFormBtn_Click(object sender, EventArgs e)
         {
-            AlbumForm albumForm = new AlbumForm();
-            if (albumForm.ShowDialog() == DialogResult.OK)
-            {
+            //AlbumForm albumForm = new AlbumForm();
+            //if (albumForm.ShowDialog() == DialogResult.OK)
+            //{
 
-            }
+            //}
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

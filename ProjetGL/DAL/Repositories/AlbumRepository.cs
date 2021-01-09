@@ -7,7 +7,7 @@ namespace DAL.Repositories
 {
     public class AlbumRepository : Repository, IAlbumRepository
     {
-        public List<Album> GetAll()
+        public IList<Album> GetAll()
         {
             return Session.Query<Album>().ToList();
         }
