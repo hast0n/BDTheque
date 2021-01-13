@@ -27,24 +27,23 @@ namespace App
         {
 
         }
+
         public void AlbumRefreshDetails()
         {
             titleLabel.Text = Album.Title;
-            publisherLabel.Text = Album.Publisher;
-            if (Album.Series != null)
-            {
-                seriesLabel.Text = Album.Series.Name;
-            }
-            descriptionLabel.Text = Album.Description;
-            isbnLabel.Text = Album.Isbn;
+            authorLabel.Text = String.Join(", ", Album.Authors);
 
             //cover display
-            if (Album.Cover != null)
+            if (Album.Cover != null) // theoretically not possible but in any case of failure to retrieve blob...
             {
                 MemoryStream stream;
-                stream = new MemoryStream(Album.Cover.File);
+                stream = new MemoryStream(Album.Cover);
                 stream.Position = 0;
                 coverPictureBox.Image = Image.FromStream(stream);
+            }
+            else
+            {
+                coverPictureBox.Image = Image.FromFile("img/cover_placeholder.png");
             }
         }
 
@@ -55,6 +54,11 @@ namespace App
             {
 
             }
+        }
+
+        private void titleLabel_MouseHover(object sender, EventArgs e)
+        {
+            albumDetailToolTip.Show(Album.Title, titleLabel);
         }
     }
 }

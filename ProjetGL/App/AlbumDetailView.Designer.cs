@@ -29,117 +29,56 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.coverPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.seriesLabel = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.isbnInfoLabel = new System.Windows.Forms.Label();
-            this.isbnLabel = new System.Windows.Forms.Label();
-            this.publisherLabel = new System.Windows.Forms.Label();
-            this.DetailsBtn = new System.Windows.Forms.Button();
+            this.authorLabel = new System.Windows.Forms.Label();
+            this.albumDetailToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // coverPictureBox
             // 
-            this.coverPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.coverPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.coverPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.coverPictureBox.Name = "coverPictureBox";
-            this.coverPictureBox.Size = new System.Drawing.Size(243, 368);
+            this.coverPictureBox.Size = new System.Drawing.Size(182, 250);
+            this.coverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.coverPictureBox.TabIndex = 0;
             this.coverPictureBox.TabStop = false;
             // 
             // titleLabel
             // 
+            this.titleLabel.AutoEllipsis = true;
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(251, 12);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(3, 253);
+            this.titleLabel.MaximumSize = new System.Drawing.Size(180, 20);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(110, 25);
+            this.titleLabel.Size = new System.Drawing.Size(87, 20);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Album Title";
+            this.titleLabel.MouseHover += new System.EventHandler(this.titleLabel_MouseHover);
             // 
-            // seriesLabel
+            // authorLabel
             // 
-            this.seriesLabel.AutoSize = true;
-            this.seriesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seriesLabel.Location = new System.Drawing.Point(252, 69);
-            this.seriesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.seriesLabel.Name = "seriesLabel";
-            this.seriesLabel.Size = new System.Drawing.Size(106, 20);
-            this.seriesLabel.TabIndex = 2;
-            this.seriesLabel.Text = "Series Name";
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoEllipsis = true;
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(252, 100);
-            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.descriptionLabel.MaximumSize = new System.Drawing.Size(592, 206);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(79, 17);
-            this.descriptionLabel.TabIndex = 3;
-            this.descriptionLabel.Text = "Description";
-            // 
-            // isbnInfoLabel
-            // 
-            this.isbnInfoLabel.AutoSize = true;
-            this.isbnInfoLabel.Location = new System.Drawing.Point(560, 340);
-            this.isbnInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.isbnInfoLabel.Name = "isbnInfoLabel";
-            this.isbnInfoLabel.Size = new System.Drawing.Size(111, 17);
-            this.isbnInfoLabel.TabIndex = 8;
-            this.isbnInfoLabel.Text = "ISBN-10 / ASIN :";
-            // 
-            // isbnLabel
-            // 
-            this.isbnLabel.AutoSize = true;
-            this.isbnLabel.Location = new System.Drawing.Point(687, 340);
-            this.isbnLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.isbnLabel.Name = "isbnLabel";
-            this.isbnLabel.Size = new System.Drawing.Size(47, 17);
-            this.isbnLabel.TabIndex = 9;
-            this.isbnLabel.Text = "[ISBN]";
-            // 
-            // publisherLabel
-            // 
-            this.publisherLabel.AutoSize = true;
-            this.publisherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publisherLabel.Location = new System.Drawing.Point(252, 42);
-            this.publisherLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.publisherLabel.Name = "publisherLabel";
-            this.publisherLabel.Size = new System.Drawing.Size(128, 20);
-            this.publisherLabel.TabIndex = 10;
-            this.publisherLabel.Text = "Publisher Name";
-            // 
-            // DetailsBtn
-            // 
-            this.DetailsBtn.Location = new System.Drawing.Point(271, 309);
-            this.DetailsBtn.Name = "DetailsBtn";
-            this.DetailsBtn.Size = new System.Drawing.Size(75, 23);
-            this.DetailsBtn.TabIndex = 11;
-            this.DetailsBtn.Text = "Détails";
-            this.DetailsBtn.UseVisualStyleBackColor = true;
-            this.DetailsBtn.Click += new System.EventHandler(this.DetailsBtn_Click);
+            this.authorLabel.AutoSize = true;
+            this.authorLabel.Location = new System.Drawing.Point(7, 277);
+            this.authorLabel.MaximumSize = new System.Drawing.Size(303, 13);
+            this.authorLabel.Name = "authorLabel";
+            this.authorLabel.Size = new System.Drawing.Size(70, 13);
+            this.authorLabel.TabIndex = 12;
+            this.authorLabel.Text = "Album Author";
             // 
             // AlbumDetailView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.DetailsBtn);
-            this.Controls.Add(this.publisherLabel);
-            this.Controls.Add(this.isbnLabel);
-            this.Controls.Add(this.isbnInfoLabel);
-            this.Controls.Add(this.descriptionLabel);
-            this.Controls.Add(this.seriesLabel);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.coverPictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AlbumDetailView";
-            this.Size = new System.Drawing.Size(864, 368);
+            this.Size = new System.Drawing.Size(183, 303);
             this.Load += new System.EventHandler(this.AlbumDetailView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -151,11 +90,7 @@ namespace App
 
         private System.Windows.Forms.PictureBox coverPictureBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label seriesLabel;
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label isbnInfoLabel;
-        private System.Windows.Forms.Label isbnLabel;
-        private System.Windows.Forms.Label publisherLabel;
-        private System.Windows.Forms.Button DetailsBtn;
+        private System.Windows.Forms.Label authorLabel;
+        private System.Windows.Forms.ToolTip albumDetailToolTip;
     }
 }

@@ -27,22 +27,21 @@ namespace App
             IList<Album> albumList = _albumRepository.GetAll();
             //_albumRepository.GetOwnedAlbums(_user);
 
-            int i = 0;
-            int y = 0;
+            int i = 0; int y = 0;
 
             foreach (var album in albumList)
             {
                 // Set curstom control properties
                 AlbumDetailView view = new AlbumDetailView
                 {
-                    Location = new System.Drawing.Point(1, -1 + y),
                     Name = $"marketAlbumViewDetail{i}",
                     TabIndex = i++,
-
+                    
                     // Set custom control data
                     Album = album,
                     DisplayStar = false
                 };
+
                 view.AlbumRefreshDetails();
                 marketFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
@@ -79,6 +78,7 @@ namespace App
                 y += view.Height;
             }
         }
+
         private void RefreshWishedAlbum()
         {
             IList<Album> userWishedAlbums = _user.WishedAlbums;
