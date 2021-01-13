@@ -5,7 +5,6 @@ drop table if exists category;
 drop table if exists author;
 drop table if exists series;
 drop table if exists user_album;
-drop table if exists cover;
 drop table if exists album_author;
 drop table if exists album_genre;
 drop table if exists user_like_album;
@@ -29,7 +28,7 @@ create table album (
 	album_description text,
 	category_id integer not null,
 	series_id integer,
-	cover_id integer
+	cover blob not null
 );
 
 create table genre (
@@ -52,11 +51,6 @@ create table series (
 	series_name varchar(200) not null
 );
 
-create table cover (
-	cover_id integer not null primary key auto_increment,
-	cover_file blob not null
-);
-
 create table album_genre (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
@@ -68,15 +62,6 @@ create table album_author (
 	album_id integer not null,
 	author_id integer not null
 );
-
-#create table user_album (
-#	id integer not null primary key auto_increment,
-#	album_id integer not null,
-#	user_id integer not null,
-#	user_own boolean,
-#	user_wish boolean,
-#	user_like boolean
-#);
 
 create table user_own_album (
 	id integer not null primary key auto_increment,

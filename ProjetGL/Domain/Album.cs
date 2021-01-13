@@ -18,23 +18,26 @@ namespace Domain
         public virtual IList<Genre> Genres { get; set; }
         public virtual Series Series { get; set; }
         public virtual Category Category { get; set; }
-        public virtual IList<Cover> CoverList { get; set; }
 
-        public virtual Cover Cover
-        {
-            get { if (CoverList.Count != 0)
-                {
-                    return CoverList[0];
-                }
-                else { return null; }
-                }
-            set { CoverList[0] = value;  }
-        }
+        public virtual byte[] Cover { get; set; }
+
+        //public virtual IList<Cover> CoverList { get; set; }
+
+        //public virtual Cover Cover
+        //{
+        //    get { if (CoverList.Count != 0)
+        //        {
+        //            return CoverList[0];
+        //        }
+        //        else { return null; }
+        //        }
+        //    set { CoverList[0] = value;  }
+        //}
 
         public Album()
         {
-            CoverList = new List<Cover>();
-            CoverList.Add(new Cover());
+            //CoverList = new List<Cover>();
+            //CoverList.Add(new Cover());
         }
 
         public Album(
