@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL.Services;
 using Domain;
 
 namespace App
@@ -15,10 +16,13 @@ namespace App
     public partial class AlbumQuickView : UserControl
     {
         public Album Album;
-        public bool DisplayStar;
+        public bool DisplayStarred;
+        public bool DisplayWished;
         public bool IsLiked;
+        public IUserRepository UserRepository;
+        public User User;
 
-        private string _authorsString => String.Join(", ", Album.Authors);
+        private string _authorsString => string.Join(", ", Album.Authors);
 
         public AlbumQuickView()
         {
@@ -27,15 +31,25 @@ namespace App
 
         private void AlbumDetailView_Load(object sender, EventArgs e)
         {
-            starredPictureBox.Visible = DisplayStar;
+            starredPictureBox.Visible = DisplayStarred;
             starredPictureBox.Parent = coverPictureBox;
             starredPictureBox.BackColor = Color.Transparent;
             starredPictureBox.BringToFront();
 
+
             titleLabel.Text = Album.Title;
             authorLabel.Text = _authorsString;
 
-            //cover display
+            if (DisplayWished)
+            {
+                wishedPictureBox.Image = Image.FromFile("img/wished.png");
+                wishedPictureBox.Visible = true;
+                wishedPictureBox.Parent = coverPictureBox;
+                wishedPictureBox.BackColor = Color.Transparent;
+                wishedPictureBox.BringToFront();
+            }
+            else wishedPictureBox.Visible = false;
+
             if (Album.Cover != null) // theoretically not possible but in any case of failure to retrieve blob...
             {
                 MemoryStream stream;
@@ -45,12 +59,24 @@ namespace App
             }
             else coverPictureBox.Image = Image.FromFile("img/cover_placeholder.png");
 
+            UpdateStarredPictureBox();
+
+            var toAvoid = new[] {"starredPictureBox", "wishedPictureBox"};
+
+            foreach (Control c in this.Controls)
+                if (!toAvoid.Contains(c.Name))
+                    c.Click += albumDetailEvent_handler_click;
+        }
+
+        private void UpdateWishedPictureBox()
+        {
+            
+        }
+
+        private void UpdateStarredPictureBox()
+        {
             if (IsLiked) starredPictureBox.Image = Image.FromFile("img/starred.png");
             else starredPictureBox.Image = Image.FromFile("img/not_starred.png");
-            
-            foreach (Control c in this.Controls)
-                if (!new []{ "starredPictureBox", "wishedPictureBox"}.Contains(c.Name))
-                    c.Click += albumDetailEvent_handler_click;
         }
 
         private void albumDetailEvent_handler_click(object sender, EventArgs e)
@@ -67,6 +93,22 @@ namespace App
         private void authorLabel_MouseHover(object sender, EventArgs e)
         {
             albumDetailToolTip.Show(_authorsString, authorLabel);
+        }
+
+        private void starredPictureBox_Click(object sender, EventArgs e)
+        {
+            IsLiked = !IsLiked;
+            UpdateStarredPictureBox();
+
+            if (IsLiked) User.LikedAlbums.Add(Album);
+            else User.LikedAlbums.Remove(Album);
+
+            UserRepository.Save(User);
+        }
+
+        private void starredPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            albumDetailToolTip.Show(IsLiked ? "Ajouté à votre liste des favoris" : "Ajoutez cet album à votre liste des favoris", authorLabel);
         }
     }
 }

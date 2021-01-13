@@ -10,18 +10,21 @@ namespace App
     {
         private readonly User _user;
         private IAlbumRepository _albumRepository;
+        private IUserRepository _userRepository;
 
-        public MainForm(User user, IAlbumRepository albumRepo)
+        public MainForm(User user, IAlbumRepository albumRepo, IUserRepository userRepo)
         {
             InitializeComponent();
 
             _user = user;
             _albumRepository = albumRepo;
+            _userRepository = userRepo;
 
             currentUserLabel.Text = user.ToString();
             
             RefreshMarketAlbum();
             RefreshOwnedAlbum();
+            RefreshWishedAlbum();
         }
 
         private void RefreshMarketAlbum()
@@ -29,7 +32,7 @@ namespace App
             IList<Album> albumList = _albumRepository.GetAll();
             //_albumRepository.GetOwnedAlbums(_user);
 
-            int i = 0; int y = 0;
+            int i = 0;
 
             foreach (var album in albumList)
             {
@@ -38,14 +41,15 @@ namespace App
                 {
                     Name = $"marketAlbumViewDetail{i}",
                     TabIndex = i++,
+                    UserRepository = _userRepository,
                     
                     // Set custom control data
                     Album = album,
-                    DisplayStar = false
+                    DisplayStarred = false,
+                    DisplayWished = _user.WishedAlbums.Contains(album)
                 };
 
                 marketFlowLayoutPanel.Controls.Add(view);
-                y += view.Height;
             }
         }
 
@@ -53,7 +57,7 @@ namespace App
         {
             IList<Album> albumList = _user.OwnedAlbums;
 
-            int i = 0; int y = 0;
+            int i = 0;
 
             foreach (var album in albumList)
             {
@@ -65,39 +69,43 @@ namespace App
 
                     // Set custom control data
                     Album = album,
-                    DisplayStar = true,
+                    DisplayStarred = true,
+                    DisplayWished = false,
+
+                    User = _user,
+                    UserRepository = _userRepository,
 
                     IsLiked = _user.LikedAlbums.Contains(album)
                 };
 
                 ownedFlowLayoutPanel.Controls.Add(view);
-                y += view.Height;
             }
         }
 
         private void RefreshWishedAlbum()
         {
-            IList<Album> userWishedAlbums = _user.WishedAlbums;
+            IList<Album> albumList = _user.WishedAlbums;
 
             int i = 0;
-            int y = 0;
 
-            foreach (var album in userWishedAlbums)
+            foreach (var album in albumList)
             {
                 // Set curstom control properties
                 AlbumQuickView view = new AlbumQuickView
                 {
-                    Location = new System.Drawing.Point(1, -1 + y),
-                    Name = $"ownedAlbumViewDetail{i}",
+                    Name = $"wishedAlbumViewDetail{i}",
                     TabIndex = i++,
+
+                    User = _user,
+                    UserRepository = _userRepository,
 
                     // Set custom control data
                     Album = album,
-                    DisplayStar = false,
+                    DisplayStarred = false,
+                    DisplayWished = true
                 };
 
-                wishesFlowLayoutPanel.Controls.Add(view);
-                y += view.Height;
+                wishedFlowLayoutPanel.Controls.Add(view);
             }
         }
 
