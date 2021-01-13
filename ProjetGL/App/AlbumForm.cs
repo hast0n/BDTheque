@@ -61,7 +61,7 @@ namespace App
             if (_album.Cover != null)
             {
                 MemoryStream stream;
-                stream = new MemoryStream(_album.Cover.File);
+                stream = new MemoryStream(_album.Cover);
                 stream.Position = 0;
                 coverPictureBox.Image = Image.FromStream(stream);
             }
