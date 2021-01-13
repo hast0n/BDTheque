@@ -35,8 +35,10 @@ namespace App
             this.authorLabel = new System.Windows.Forms.Label();
             this.albumDetailToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.starredPictureBox = new System.Windows.Forms.PictureBox();
+            this.wishedPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishedPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // coverPictureBox
@@ -81,12 +83,24 @@ namespace App
             this.starredPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.starredPictureBox.TabIndex = 13;
             this.starredPictureBox.TabStop = false;
+            this.starredPictureBox.Click += new System.EventHandler(this.starredPictureBox_Click);
+            this.starredPictureBox.MouseHover += new System.EventHandler(this.starredPictureBox_MouseHover);
             // 
-            // AlbumDetailView
+            // wishedPictureBox
+            // 
+            this.wishedPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.wishedPictureBox.Name = "wishedPictureBox";
+            this.wishedPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.wishedPictureBox.TabIndex = 14;
+            this.wishedPictureBox.TabStop = false;
+            this.albumDetailToolTip.SetToolTip(this.wishedPictureBox, "Vous souhaitez obtenir cet album !");
+            // 
+            // AlbumQuickView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.Controls.Add(this.wishedPictureBox);
             this.Controls.Add(this.starredPictureBox);
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.titleLabel);
@@ -96,6 +110,7 @@ namespace App
             this.Load += new System.EventHandler(this.AlbumDetailView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishedPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +123,6 @@ namespace App
         private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.ToolTip albumDetailToolTip;
         private System.Windows.Forms.PictureBox starredPictureBox;
+        private System.Windows.Forms.PictureBox wishedPictureBox;
     }
 }
