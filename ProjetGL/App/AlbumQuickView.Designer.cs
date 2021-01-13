@@ -1,7 +1,7 @@
 ﻿
 namespace App
 {
-    partial class AlbumDetailView
+    partial class AlbumQuickView
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,7 +34,9 @@ namespace App
             this.titleLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
             this.albumDetailToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.starredPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // coverPictureBox
@@ -51,7 +53,7 @@ namespace App
             this.titleLabel.AutoEllipsis = true;
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(3, 253);
+            this.titleLabel.Location = new System.Drawing.Point(3, 259);
             this.titleLabel.MaximumSize = new System.Drawing.Size(180, 20);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(87, 20);
@@ -62,25 +64,38 @@ namespace App
             // authorLabel
             // 
             this.authorLabel.AutoSize = true;
-            this.authorLabel.Location = new System.Drawing.Point(7, 277);
-            this.authorLabel.MaximumSize = new System.Drawing.Size(303, 13);
+            this.authorLabel.Location = new System.Drawing.Point(6, 284);
+            this.authorLabel.MaximumSize = new System.Drawing.Size(180, 13);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(70, 13);
             this.authorLabel.TabIndex = 12;
             this.authorLabel.Text = "Album Author";
+            this.authorLabel.MouseHover += new System.EventHandler(this.authorLabel_MouseHover);
+            // 
+            // starredPictureBox
+            // 
+            this.starredPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.starredPictureBox.Location = new System.Drawing.Point(160, 3);
+            this.starredPictureBox.Name = "starredPictureBox";
+            this.starredPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.starredPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.starredPictureBox.TabIndex = 13;
+            this.starredPictureBox.TabStop = false;
             // 
             // AlbumDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.Controls.Add(this.starredPictureBox);
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.coverPictureBox);
-            this.Name = "AlbumDetailView";
+            this.Name = "AlbumQuickView";
             this.Size = new System.Drawing.Size(183, 303);
             this.Load += new System.EventHandler(this.AlbumDetailView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +107,6 @@ namespace App
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.ToolTip albumDetailToolTip;
+        private System.Windows.Forms.PictureBox starredPictureBox;
     }
 }

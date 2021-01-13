@@ -17,9 +17,11 @@ namespace App
 
             _user = user;
             _albumRepository = albumRepo;
+
             currentUserLabel.Text = user.ToString();
+            
             RefreshMarketAlbum();
-            //RefreshOwnedAlbum();
+            RefreshOwnedAlbum();
         }
 
         private void RefreshMarketAlbum()
@@ -32,7 +34,7 @@ namespace App
             foreach (var album in albumList)
             {
                 // Set curstom control properties
-                AlbumDetailView view = new AlbumDetailView
+                AlbumQuickView view = new AlbumQuickView
                 {
                     Name = $"marketAlbumViewDetail{i}",
                     TabIndex = i++,
@@ -42,7 +44,6 @@ namespace App
                     DisplayStar = false
                 };
 
-                view.AlbumRefreshDetails();
                 marketFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
             }
@@ -50,30 +51,25 @@ namespace App
 
         private void RefreshOwnedAlbum()
         {
-            
-            IList<Album> userOwnedAlbums = _user.OwnedAlbums;
+            IList<Album> albumList = _user.OwnedAlbums;
 
-            int i = 0;
-            int y = 0;
+            int i = 0; int y = 0;
 
-            foreach (var album in userOwnedAlbums)
+            foreach (var album in albumList)
             {
-                // Set curstom control properties
-                AlbumDetailView view = new AlbumDetailView
+                // Set custom control properties
+                AlbumQuickView view = new AlbumQuickView
                 {
-                    Location = new System.Drawing.Point(1, -1 + y),
-                    Name = $"ownedAlbumViewDetail{i}",
+                    Name = $"marketAlbumViewDetail{i}",
                     TabIndex = i++,
 
                     // Set custom control data
                     Album = album,
                     DisplayStar = true,
 
-                    //??
-                    //IsLiked = userWishedAlbums.Contains(album)
-                    //??
+                    IsLiked = _user.LikedAlbums.Contains(album)
                 };
-                view.AlbumRefreshDetails();
+
                 ownedFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
             }
@@ -89,7 +85,7 @@ namespace App
             foreach (var album in userWishedAlbums)
             {
                 // Set curstom control properties
-                AlbumDetailView view = new AlbumDetailView
+                AlbumQuickView view = new AlbumQuickView
                 {
                     Location = new System.Drawing.Point(1, -1 + y),
                     Name = $"ownedAlbumViewDetail{i}",
@@ -97,25 +93,12 @@ namespace App
 
                     // Set custom control data
                     Album = album,
-                    DisplayStar = true,
-
-                    //??
-                    //IsLiked = userWishedAlbums.Contains(album)
-                    //??
+                    DisplayStar = false,
                 };
-                view.AlbumRefreshDetails();
-                ownedFlowLayoutPanel.Controls.Add(view);
+
+                wishesFlowLayoutPanel.Controls.Add(view);
                 y += view.Height;
             }
-        }
-
-        private void AlbumFormBtn_Click(object sender, EventArgs e)
-        {
-            //AlbumForm albumForm = new AlbumForm();
-            //if (albumForm.ShowDialog() == DialogResult.OK)
-            //{
-
-            //}
         }
 
         private void MainForm_Load(object sender, EventArgs e)

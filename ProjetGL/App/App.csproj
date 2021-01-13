@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlbumDetailView.cs">
+    <Compile Include="AlbumQuickView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AlbumDetailView.Designer.cs">
-      <DependentUpon>AlbumDetailView.cs</DependentUpon>
+    <Compile Include="AlbumQuickView.Designer.cs">
+      <DependentUpon>AlbumQuickView.cs</DependentUpon>
     </Compile>
     <Compile Include="AlbumForm.cs">
       <SubType>Form</SubType>
@@ -72,8 +72,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AlbumDetailView.resx">
-      <DependentUpon>AlbumDetailView.cs</DependentUpon>
+    <EmbeddedResource Include="AlbumQuickView.resx">
+      <DependentUpon>AlbumQuickView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlbumForm.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
