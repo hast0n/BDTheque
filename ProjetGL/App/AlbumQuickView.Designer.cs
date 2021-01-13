@@ -34,11 +34,11 @@ namespace App
             this.titleLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
             this.albumDetailToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.starredPictureBox = new System.Windows.Forms.PictureBox();
             this.wishedPictureBox = new System.Windows.Forms.PictureBox();
+            this.starredPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishedPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // coverPictureBox
@@ -74,6 +74,15 @@ namespace App
             this.authorLabel.Text = "Album Author";
             this.authorLabel.MouseHover += new System.EventHandler(this.authorLabel_MouseHover);
             // 
+            // wishedPictureBox
+            // 
+            this.wishedPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.wishedPictureBox.Name = "wishedPictureBox";
+            this.wishedPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.wishedPictureBox.TabIndex = 14;
+            this.wishedPictureBox.TabStop = false;
+            this.wishedPictureBox.Click += new System.EventHandler(this.wishedPictureBox_Click);
+            // 
             // starredPictureBox
             // 
             this.starredPictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -85,15 +94,6 @@ namespace App
             this.starredPictureBox.TabStop = false;
             this.starredPictureBox.Click += new System.EventHandler(this.starredPictureBox_Click);
             this.starredPictureBox.MouseHover += new System.EventHandler(this.starredPictureBox_MouseHover);
-            // 
-            // wishedPictureBox
-            // 
-            this.wishedPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.wishedPictureBox.Name = "wishedPictureBox";
-            this.wishedPictureBox.Size = new System.Drawing.Size(50, 50);
-            this.wishedPictureBox.TabIndex = 14;
-            this.wishedPictureBox.TabStop = false;
-            this.albumDetailToolTip.SetToolTip(this.wishedPictureBox, "Vous souhaitez obtenir cet album !");
             // 
             // AlbumQuickView
             // 
@@ -109,8 +109,8 @@ namespace App
             this.Size = new System.Drawing.Size(183, 303);
             this.Load += new System.EventHandler(this.AlbumDetailView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coverPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wishedPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.starredPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

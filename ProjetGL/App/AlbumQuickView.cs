@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using DAL.Services;
+using Domain;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL.Services;
-using Domain;
+using App.Properties;
 
 namespace App
 {
@@ -36,13 +32,12 @@ namespace App
             starredPictureBox.BackColor = Color.Transparent;
             starredPictureBox.BringToFront();
 
-
             titleLabel.Text = Album.Title;
             authorLabel.Text = _authorsString;
 
             if (DisplayWished)
             {
-                wishedPictureBox.Image = Image.FromFile("img/wished.png");
+                wishedPictureBox.Image = Properties.Resources.wished;
                 wishedPictureBox.Visible = true;
                 wishedPictureBox.Parent = coverPictureBox;
                 wishedPictureBox.BackColor = Color.Transparent;
@@ -52,31 +47,25 @@ namespace App
 
             if (Album.Cover != null) // theoretically not possible but in any case of failure to retrieve blob...
             {
-                MemoryStream stream;
-                stream = new MemoryStream(Album.Cover);
+                MemoryStream stream = new MemoryStream(Album.Cover);
                 stream.Position = 0;
                 coverPictureBox.Image = Image.FromStream(stream);
             }
-            else coverPictureBox.Image = Image.FromFile("img/cover_placeholder.png");
-
-            UpdateStarredPictureBox();
+            else coverPictureBox.Image = Resources.cover_placeholder;
 
             var toAvoid = new[] {"starredPictureBox", "wishedPictureBox"};
 
             foreach (Control c in this.Controls)
                 if (!toAvoid.Contains(c.Name))
                     c.Click += albumDetailEvent_handler_click;
-        }
 
-        private void UpdateWishedPictureBox()
-        {
-            
+            UpdateStarredPictureBox();
         }
 
         private void UpdateStarredPictureBox()
         {
-            if (IsLiked) starredPictureBox.Image = Image.FromFile("img/starred.png");
-            else starredPictureBox.Image = Image.FromFile("img/not_starred.png");
+            if (IsLiked) starredPictureBox.Image = Resources.starred;
+            else starredPictureBox.Image = Resources.not_starred;
         }
 
         private void albumDetailEvent_handler_click(object sender, EventArgs e)
@@ -108,7 +97,12 @@ namespace App
 
         private void starredPictureBox_MouseHover(object sender, EventArgs e)
         {
-            albumDetailToolTip.Show(IsLiked ? "Ajouté à votre liste des favoris" : "Ajoutez cet album à votre liste des favoris", authorLabel);
+            albumDetailToolTip.Show(IsLiked ? "Ajouté à votre liste des favoris" : "Ajoutez cet album à votre liste des favoris", starredPictureBox);
+        }
+
+        private void wishedPictureBox_Click(object sender, EventArgs e)
+        {
+            albumDetailToolTip.Show("Ajouté à votre liste de souhaits", wishedPictureBox);
         }
     }
 }
