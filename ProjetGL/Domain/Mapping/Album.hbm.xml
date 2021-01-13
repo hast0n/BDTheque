@@ -25,15 +25,10 @@
       <many-to-many class="Author" column="author_id"/>
     </bag>
 
-    <bag name="Genres" table="album_genre">
+    <bag name="Genres" table="album_genre" lazy="true">
       <key column="album_id"/>
       <many-to-many class="Genre" column="genre_id"/>
     </bag>
-
-    <!--<bag name="CoverList" inverse="false" lazy="true">
-      <key column="cover_id"/>
-      <one-to-many class="Cover"/>
-    </bag>-->
 
   </class>
 </hibernate-mapping>

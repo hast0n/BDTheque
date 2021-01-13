@@ -13,7 +13,7 @@
     <property name="Name" column="author_name" not-null="true"/>
 
     <!-- Mapping des associations de la classe -->
-    <bag name="Albums" table="album_author">
+    <bag name="Albums" table="album_author" lazy="true">
       <key column="author_id"/>
       <many-to-many class="Album" column="album_id"/>
     </bag>
