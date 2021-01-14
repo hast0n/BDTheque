@@ -14,7 +14,7 @@ namespace App
 {
     public partial class AlbumForm : Form
     {
-        public Album _album;
+        private Album _album;
 
         public AlbumForm(Album album)
         {
@@ -24,17 +24,18 @@ namespace App
 
         private void AlbumForm_Load(object sender, EventArgs e)
         {
-            titleLabel.Text = _album.Title;
-            publisherLabel.Text = _album.Publisher;
-            descriptionLabel.Text = _album.Description;
-            isbnLabel.Text = _album.Isbn;
-            categoryLabel.Text = _album.Category.ToString();
-            
-            if (_album.Series != null)
-            {
-                seriesLabel.Text = _album.Series.Name;
-            }
-         
+            titleTextBox.Text = _album.Title;
+            authorsTextBox.Text = string.Join(" ,", _album.Authors);
+            publisherTextBox.Text = _album.Publisher;
+            isbnTextBox.Text = _album.Isbn;
+            categoryTextBox.Text = _album.Category.Name;
+            descriptionRichTextBox.Text = _album.Description;
+
+            seriesTextBox.Text = _album.Series?.Name ?? "N/A";
+            genresTextBox.Text = _album.Genres.Count > 0
+                ? string.Join(", ", _album.Genres)
+                : "N/A";
+
             if (_album.Cover != null)
             {
                 MemoryStream stream;
@@ -43,7 +44,16 @@ namespace App
                 coverPictureBox.Image = Image.FromStream(stream);
             }
             else coverPictureBox.Image = Image.FromFile("img/cover_placeholder.png");
+        }
 
+        private void categoryTextBox_MouseHover(object sender, EventArgs e)
+        {
+            albumDetailToolTip.Show(categoryTextBox.Text, categoryTextBox);
+        }
+
+        private void genresTextBox_MouseHover(object sender, EventArgs e)
+        {
+            albumDetailToolTip.Show(genresTextBox.Text, genresTextBox);
         }
     }
 }
