@@ -40,10 +40,6 @@ namespace App
             wrongCredInfoLabel.Visible = true;
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.Enter))
@@ -53,20 +49,5 @@ namespace App
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-        //private void Title_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void label3_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void connectBtn_Click(object sender, EventArgs e)
-        //{
-        //    MainForm mainform = new MainForm(User, );
-        //    this.Close();
-        //}
     }
 }
