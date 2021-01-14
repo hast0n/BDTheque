@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DAL.Services;
 using Domain;
 
 namespace DAL.Repositories
 {
-    class SeriesRepository:Repository, ISeriesRepository
+    public class SeriesRepository:Repository, ISeriesRepository
     {
         public List<Series> GetAll()
         {
