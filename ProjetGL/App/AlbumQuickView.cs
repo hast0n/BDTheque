@@ -70,7 +70,15 @@ namespace App
 
         private void albumDetailEvent_handler_click(object sender, EventArgs e)
         {
-            AlbumForm detailsForm = new AlbumForm(Album);
+            AlbumForm detailsForm = new AlbumForm()
+            {
+                User = User, 
+                Album = Album,
+                IsOwned = DisplayStarred,
+                IsWished = DisplayWished,
+
+                UserRepository = UserRepository
+            };
             detailsForm.ShowDialog();
         }
 
