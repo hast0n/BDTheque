@@ -2,15 +2,25 @@
 using Domain;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace App
 {
     public partial class MainForm : Form
     {
+        private enum SearchType
+        {
+            Title, Author, Series, Genre
+        }
+
+        private SearchType _currentSearchType;
         private readonly User _user;
-        private IAlbumRepository _albumRepository;
-        private IUserRepository _userRepository;
+        private readonly IAlbumRepository _albumRepository;
+        private readonly IUserRepository _userRepository;
+
+        private const string SearchBarPlaceholder = "Rechercher un album sur le marché ...";
 
         public MainForm(User user, IAlbumRepository albumRepo, IUserRepository userRepo)
         {
@@ -25,12 +35,40 @@ namespace App
             RefreshMarketAlbum();
             RefreshOwnedAlbum();
             RefreshWishedAlbum();
+
+            searchTextBox.GotFocus += RemoveText;
+            searchTextBox.LostFocus += AddText;
+
+            searchTextBox.ForeColor = Color.Gray;
+            searchTextBox.Text = SearchBarPlaceholder;
+
+            _currentSearchType = SearchType.Title;
+        }
+        
+        public void RemoveText(object sender, EventArgs e)
+        {
+            if (searchTextBox.Text == SearchBarPlaceholder)
+            {
+                searchTextBox.ForeColor = Color.Black;
+                searchTextBox.Text = "";
+            }
         }
 
-        private void RefreshMarketAlbum()
+        public void AddText(object sender, EventArgs e)
         {
-            IList<Album> albumList = _albumRepository.GetAll();
-            //_albumRepository.GetOwnedAlbums(_user);
+            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
+            {
+                searchTextBox.ForeColor = Color.Gray;
+                searchTextBox.Text = SearchBarPlaceholder;
+            }
+        }
+
+        private void RefreshMarketAlbum(IList<Album> albumList = null)
+        {
+            marketFlowLayoutPanel.Controls.Clear();
+
+            if (albumList is null) albumList = _albumRepository.GetAll();
+            //albumList ??= _albumRepository.GetAll(); //not available in C#7.3 grrr!
 
             int i = 0;
 
@@ -109,9 +147,62 @@ namespace App
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
+            string search = searchTextBox.Text != SearchBarPlaceholder
+                ? searchTextBox.Text
+                : "";
 
+            IList<Album> result = null;
+
+            switch (_currentSearchType)
+            {
+                case SearchType.Title:
+                    result =_albumRepository.GetByTitle(search);
+                    break;
+                case SearchType.Author:
+                    result = _albumRepository.GetByAuthor(search);
+                    break;
+                case SearchType.Series:
+                    result = _albumRepository.GetBySeries(search);
+                    break;
+                case SearchType.Genre:
+                    result = _albumRepository.GetByGenre(search);
+                    break;
+            }
+
+            RefreshMarketAlbum(result);
+            mainTabControl.SelectedTab = marketAlbumsPage;
+        }
+
+        private void titleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentSearchType = SearchType.Title;
+        }
+
+        private void authorRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentSearchType = SearchType.Author;
+        }
+
+        private void seriesRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentSearchType = SearchType.Series;
+        }
+
+        private void genreRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentSearchType = SearchType.Genre;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Enter) && searchTextBox.Focused)
+            {
+                searchButton.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

@@ -7,9 +7,33 @@ namespace DAL.Repositories
 {
     public class AlbumRepository : Repository, IAlbumRepository
     {
-        public IList<Album> GetAll()
+
+        public IList<Album> GetByTitle(string title)
         {
-            return Session.Query<Album>().ToList();
+            return Session.Query<Album>()
+                .Where(a => a.Title.Contains(title))
+                .ToList();
+        }
+
+        public IList<Album> GetByAuthor(string author)
+        {
+            return Session.Query<Author>()
+                .SingleOrDefault(a => a.Name.Equals(author))
+                ?.Albums;
+        }
+
+        public IList<Album> GetBySeries(string series)
+        {
+            return Session.Query<Series>()
+                .SingleOrDefault(a => a.Name.Equals(series))
+                ?.Albums;
+        }
+
+        public IList<Album> GetByGenre(string genre)
+        {
+            return Session.Query<Genre>()
+                .SingleOrDefault(a => a.Name.Equals(genre))
+                ?.Albums;
         }
 
         public void Save(Album album)
@@ -17,30 +41,14 @@ namespace DAL.Repositories
             Session.SaveOrUpdate(album);
             Session.Flush();
         }
+        
         public Album GetAlbumById(int id)
         {
-            //string requete = "select a from Album a where a.Id=?";
-            var album = Session.Query<Album>().SingleOrDefault(a => a.Id == id);
+            return Session.Query<Album>().SingleOrDefault(a => a.Id == id);
+        }
+        
+        public IList<Album> GetAll() => Session.Query<Album>().ToList();
 
-            //var album  = Session.Query<Album>().ToList().Where(a => a.Id == id).FirstOrDefault();
-            //var album = Session.CreateQuery(requete).SetInt32(0, id).List<Album>();
-            return album;
-            //return Session.Query<Album>().SingleOrDefault(a => a.Id == id);
-        }
-        public IList<Album> GetMarketAlbums()
-        {
-            return Session.Query<Album>().ToList();
-        }
-        public void GetOwnedAlbums(User user)//IList<Album>
-        {
-            string requete = "select a from User a";
-            var cover = Session.CreateQuery(requete).SetInt32(0, user.Id).List<Cover>();
-            return;
-        }
-        public void GetWishesAlbums(User user)//IList<Album>
-        {
-            var retour = Session.CreateSQLQuery("SELECT `album_id` FROM `user_album` WHERE `user_id`=1 AND `user_own`=1;");
-            
-        }
+        public IList<Album> GetMarketAlbums() => Session.Query<Album>().ToList();
     }
 }
