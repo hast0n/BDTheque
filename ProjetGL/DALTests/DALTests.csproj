@@ -68,10 +68,9 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenreRepositoryTests.cs" />
-    <Compile Include="SeriesRepositoryTests.cs" />
+    <Compile Include="TestRepositories\AlbumRepositoryTests.cs" />
     <Compile Include="TestRepository.cs" />
-    <Compile Include="UserRepositoryTests.cs" />
+    <Compile Include="TestRepositories\UserRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
