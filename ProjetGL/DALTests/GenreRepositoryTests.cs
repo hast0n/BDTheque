@@ -18,34 +18,34 @@ namespace DALTests
             TestRepository.ResetBDD();
         }
         [TestMethod]
-        public void SeriesGetAllTest()
+        public void GenreGetAllTest()
         {
-            var seriesRepository = new SeriesRepository();
-            var allSeries = seriesRepository.GetAll();
-            Assert.AreEqual(4, allSeries.Count);
-            string actualSeries = "";
-            foreach (Series aa in allSeries)
+            var genreRepository = new GenreRepository();
+            var allGenre = genreRepository.GetAll();
+            Assert.AreEqual(7, allGenre.Count);
+            string actualGenre = "";
+            foreach (Genre aa in allGenre)
             {
-                actualSeries += aa.ToString() + ", ";
+                actualGenre += aa.ToString() + ", ";
             }
-            string expectedSeries = "Les Cryptides, Fullmetal Alchemist, Hunter X Hunter, Kookabura, ";
-            Assert.AreEqual(actualSeries, expectedSeries);
+            string expectedGenre = "Epopée, Science Fiction, Fantasy, Biographie, Polar, Art musique et cinéma, Jeunesse, ";
+            Assert.AreEqual(actualGenre, expectedGenre);
         }
         [TestMethod]
         public void SaveUserTest()
         {
-            var seriesRepository = new SeriesRepository();
-            var newSeries = new Series("Une nouvelle");
-            seriesRepository.Save(newSeries);
-            var allSeries = seriesRepository.GetAll();
-            Assert.AreEqual(5, allSeries.Count);
-            string actualSeries = "";
-            foreach (Series aa in allSeries)
+            var genreRepository = new GenreRepository();
+            var newGenre = new Genre("Un nouveau");
+            genreRepository.Save(newGenre);
+            var allGenre = genreRepository.GetAll();
+            Assert.AreEqual(8, allGenre.Count);
+            string actualGenre = "";
+            foreach (Genre aa in allGenre)
             {
-                actualSeries += aa.ToString() + ", ";
+                actualGenre += aa.ToString() + ", ";
             }
-            string expectedSeries = "Les Cryptides, Fullmetal Alchemist, Hunter X Hunter, Kookabura, Une nouvelle, ";
-            Assert.AreEqual(actualSeries, expectedSeries);
+            string expectedGenre = "Epopée, Science Fiction, Fantasy, Biographie, Polar, Art musique et cinéma, Jeunesse, Un nouveau, ";
+            Assert.AreEqual(actualGenre, expectedGenre);
         }
     }
 }

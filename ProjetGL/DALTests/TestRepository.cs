@@ -33,6 +33,8 @@ namespace DALTests
             Execute("create table user_wish_album ( id integer not null primary key auto_increment, album_id integer not null, user_id integer not null ); ");
             Execute("create table user_like_album ( id integer not null primary key auto_increment, album_id integer not null, user_id integer not null ); ");
             //qques éléments
+            // some genre
+            Execute("INSERT INTO `genre` (`genre_id`, `genre_name`) VALUES(1, 'Epopée'),(2, 'Science Fiction'),(3, 'Fantasy'),(4, 'Biographie'),(5, 'Polar'),(6, 'Art musique et cinéma'),(7, 'Jeunesse'); ");
             // some series
             Execute("INSERT INTO `series` (`series_id`, `series_name`) VALUES(1, 'Les Cryptides'),(2, 'Fullmetal Alchemist'),(3, 'Hunter X Hunter'),(4, 'Kookabura'); ");
             // some category
