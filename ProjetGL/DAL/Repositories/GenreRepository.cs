@@ -5,7 +5,7 @@ using Domain;
 
 namespace DAL.Repositories
 {
-    class GenreRepository: Repository, IGenreRepository
+    class GenreRepository: Repository//, IGenreRepository
     {
         public List<Genre> GetAll()
         {
