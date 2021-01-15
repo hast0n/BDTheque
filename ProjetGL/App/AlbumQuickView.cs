@@ -12,8 +12,8 @@ namespace App
     public partial class AlbumQuickView : UserControl
     {
         public Album Album;
-        public bool DisplayStarred;
-        public bool DisplayWished;
+        public bool IsOwned;
+        public bool IsWished;
         public bool IsLiked;
         public IUserRepository UserRepository;
         public User User;
@@ -27,7 +27,7 @@ namespace App
 
         private void AlbumDetailView_Load(object sender, EventArgs e)
         {
-            starredPictureBox.Visible = DisplayStarred;
+            starredPictureBox.Visible = IsOwned;
             starredPictureBox.Parent = coverPictureBox;
             starredPictureBox.BackColor = Color.Transparent;
             starredPictureBox.BringToFront();
@@ -35,7 +35,7 @@ namespace App
             titleLabel.Text = Album.Title;
             authorLabel.Text = _authorsString;
 
-            if (DisplayWished)
+            if (IsWished)
             {
                 wishedPictureBox.Image = Properties.Resources.wished;
                 wishedPictureBox.Visible = true;
@@ -74,8 +74,8 @@ namespace App
             {
                 User = User, 
                 Album = Album,
-                IsOwned = DisplayStarred,
-                IsWished = DisplayWished,
+                IsOwned = IsOwned,
+                IsWished = IsWished,
 
                 UserRepository = UserRepository
             };

@@ -47,6 +47,7 @@ namespace App
             _currentSearchType = SearchType.Title;
         }
         
+
         public void RemoveText(object sender, EventArgs e)
         {
             if (searchTextBox.Text == SearchBarPlaceholder)
@@ -65,12 +66,16 @@ namespace App
             }
         }
 
+
         private void RefreshMarketAlbum(IList<Album> albumList = null)
         {
             marketFlowLayoutPanel.Controls.Clear();
 
             if (albumList is null) albumList = _albumRepository.GetAll();
             //albumList ??= _albumRepository.GetAll(); //not available in C#7.3 grrr!
+
+            var ownedAlbums = _user.OwnedAlbums;
+            var wishedAlbums = _user.WishedAlbums;
 
             int i = 0;
 
@@ -86,8 +91,9 @@ namespace App
                     
                     // Set custom control data
                     Album = album,
-                    DisplayStarred = false,
-                    DisplayWished = _user.WishedAlbums.Contains(album)
+
+                    IsOwned = ownedAlbums.Contains(album),
+                    IsWished = wishedAlbums.Contains(album)
                 };
 
                 marketFlowLayoutPanel.Controls.Add(view);
@@ -99,6 +105,8 @@ namespace App
             ownedFlowLayoutPanel.Controls.Clear();
 
             IList<Album> albumList = _user.OwnedAlbums;
+
+            var likedAlbums = _user.LikedAlbums;
 
             int i = 0;
 
@@ -112,13 +120,13 @@ namespace App
 
                     // Set custom control data
                     Album = album,
-                    DisplayStarred = true,
-                    DisplayWished = false,
+                    IsOwned = true,
+                    IsWished = false,
 
                     User = _user,
                     UserRepository = _userRepository,
 
-                    IsLiked = _user.LikedAlbums.Contains(album)
+                    IsLiked = likedAlbums.Contains(album)
                 };
 
                 ownedFlowLayoutPanel.Controls.Add(view);
@@ -146,13 +154,14 @@ namespace App
 
                     // Set custom control data
                     Album = album,
-                    DisplayStarred = false,
-                    DisplayWished = true
+                    IsOwned = false,
+                    IsWished = true
                 };
 
                 wishedFlowLayoutPanel.Controls.Add(view);
             }
         }
+
 
         private void searchButton_Click(object sender, EventArgs e)
         {
@@ -203,6 +212,7 @@ namespace App
         {
             _currentSearchType = SearchType.Genre;
         }
+
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
