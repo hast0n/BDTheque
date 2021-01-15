@@ -79,6 +79,7 @@ namespace App
             this.wishedPictureBox.Location = new System.Drawing.Point(0, 0);
             this.wishedPictureBox.Name = "wishedPictureBox";
             this.wishedPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.wishedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.wishedPictureBox.TabIndex = 14;
             this.wishedPictureBox.TabStop = false;
             this.wishedPictureBox.Click += new System.EventHandler(this.wishedPictureBox_Click);

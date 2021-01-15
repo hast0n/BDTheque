@@ -60,6 +60,7 @@ namespace App
             this.mainTabControl.Controls.Add(this.myAlbumsPage);
             this.mainTabControl.Controls.Add(this.marketAlbumsPage);
             this.mainTabControl.Controls.Add(this.wishesPage);
+            this.mainTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.mainTabControl.Location = new System.Drawing.Point(11, 151);
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.mainTabControl.Name = "mainTabControl";
@@ -255,6 +256,7 @@ namespace App
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BDThèque";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.mainTabControl.ResumeLayout(false);
             this.myAlbumsPage.ResumeLayout(false);
             this.marketAlbumsPage.ResumeLayout(false);

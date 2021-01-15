@@ -15,6 +15,8 @@ namespace App
             Title, Author, Series, Genre
         }
 
+        public static bool NeedRefresh;
+
         private SearchType _currentSearchType;
         private readonly User _user;
         private readonly IAlbumRepository _albumRepository;
@@ -80,6 +82,7 @@ namespace App
                     Name = $"marketAlbumViewDetail{i}",
                     TabIndex = i++,
                     UserRepository = _userRepository,
+                    User = _user,
                     
                     // Set custom control data
                     Album = album,
@@ -93,6 +96,8 @@ namespace App
 
         private void RefreshOwnedAlbum()
         {
+            ownedFlowLayoutPanel.Controls.Clear();
+
             IList<Album> albumList = _user.OwnedAlbums;
 
             int i = 0;
@@ -122,6 +127,8 @@ namespace App
 
         private void RefreshWishedAlbum()
         {
+            wishedFlowLayoutPanel.Controls.Clear();
+
             IList<Album> albumList = _user.WishedAlbums;
 
             int i = 0;
@@ -171,6 +178,8 @@ namespace App
                     break;
             }
 
+            result = result is null ? new List<Album>() : result;
+
             RefreshMarketAlbum(result);
             mainTabControl.SelectedTab = marketAlbumsPage;
         }
@@ -203,6 +212,18 @@ namespace App
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            if (NeedRefresh)
+            {
+                RefreshMarketAlbum();
+                RefreshWishedAlbum();
+                RefreshOwnedAlbum();
+
+                NeedRefresh = false;
+            }
         }
     }
 }

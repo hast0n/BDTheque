@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DAL.Services;
 using Domain;
+using NHibernate.Linq;
 
 namespace DAL.Repositories
 {
@@ -11,28 +13,28 @@ namespace DAL.Repositories
         public IList<Album> GetByTitle(string title)
         {
             return Session.Query<Album>()
-                .Where(a => a.Title.Contains(title))
+                .Where(a => a.Title.Contains(title.ToLower()))
                 .ToList();
         }
 
         public IList<Album> GetByAuthor(string author)
         {
             return Session.Query<Author>()
-                .SingleOrDefault(a => a.Name.Equals(author))
+                .FirstOrDefault(a => a.Name.Like(author))
                 ?.Albums;
         }
 
         public IList<Album> GetBySeries(string series)
         {
             return Session.Query<Series>()
-                .SingleOrDefault(a => a.Name.Equals(series))
+                .FirstOrDefault(s => s.Name.Like(series))
                 ?.Albums;
         }
 
         public IList<Album> GetByGenre(string genre)
         {
             return Session.Query<Genre>()
-                .SingleOrDefault(a => a.Name.Equals(genre))
+                .FirstOrDefault(g => g.Name.Like(genre))
                 ?.Albums;
         }
 
