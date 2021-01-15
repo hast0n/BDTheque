@@ -240,5 +240,10 @@ namespace App
                 NeedRefresh = false;
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
