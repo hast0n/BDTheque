@@ -51,6 +51,13 @@ namespace DAL.Repositories
         
         public IList<Album> GetAll() => Session.Query<Album>().ToList();
 
-        public IList<Album> GetMarketAlbums() => Session.Query<Album>().ToList();
+
+        public IList<Author> GetAuthors() => Session.Query<Author>().ToList();
+
+        public IList<Series> GetSeries() => Session.Query<Series>().ToList();
+
+        public IList<Genre> GetGenres() => Session.Query<Genre>().ToList();
+
+        public IList<Category> GetCategories() => Session.Query<Category>().ToList();
     }
 }

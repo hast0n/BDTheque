@@ -12,9 +12,12 @@ namespace App
     public partial class AlbumQuickView : UserControl
     {
         public Album Album;
+        
         public bool IsOwned;
         public bool IsWished;
         public bool IsLiked;
+        public bool DisplayStars = false;
+
         public IUserRepository UserRepository;
         public User User;
 
@@ -27,13 +30,18 @@ namespace App
 
         private void AlbumDetailView_Load(object sender, EventArgs e)
         {
-            starredPictureBox.Visible = IsOwned;
-            starredPictureBox.Parent = coverPictureBox;
-            starredPictureBox.BackColor = Color.Transparent;
-            starredPictureBox.BringToFront();
 
             titleLabel.Text = Album.Title;
             authorLabel.Text = _authorsString;
+            
+            if (DisplayStars)
+            {
+                starredPictureBox.Visible = true;
+                starredPictureBox.Parent = coverPictureBox;
+                starredPictureBox.BackColor = Color.Transparent;
+                starredPictureBox.BringToFront();
+            }
+            else starredPictureBox.Visible = false;
 
             if (IsWished)
             {
@@ -42,6 +50,7 @@ namespace App
                 wishedPictureBox.Parent = coverPictureBox;
                 wishedPictureBox.BackColor = Color.Transparent;
                 wishedPictureBox.BringToFront();
+                // Couldn't make it work properly via Designer
             }
             else wishedPictureBox.Visible = false;
 
@@ -55,6 +64,7 @@ namespace App
 
             var toAvoid = new[] {"starredPictureBox", "wishedPictureBox"};
 
+            // Enable control wide click to show details
             foreach (Control c in this.Controls)
                 if (!toAvoid.Contains(c.Name))
                     c.Click += albumDetailEvent_handler_click;
