@@ -47,6 +47,7 @@ namespace App
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.quitButton = new System.Windows.Forms.Button();
             this.addAlbumButton = new System.Windows.Forms.Button();
+            this.disconnectBtn = new System.Windows.Forms.Button();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
             this.marketAlbumsPage.SuspendLayout();
@@ -63,21 +64,21 @@ namespace App
             this.mainTabControl.Controls.Add(this.marketAlbumsPage);
             this.mainTabControl.Controls.Add(this.wishesPage);
             this.mainTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.mainTabControl.Location = new System.Drawing.Point(11, 151);
-            this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
+            this.mainTabControl.Location = new System.Drawing.Point(15, 186);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(889, 572);
+            this.mainTabControl.Size = new System.Drawing.Size(1185, 704);
             this.mainTabControl.TabIndex = 4;
             // 
             // myAlbumsPage
             // 
             this.myAlbumsPage.Controls.Add(this.ownedFlowLayoutPanel);
-            this.myAlbumsPage.Location = new System.Drawing.Point(4, 22);
-            this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.myAlbumsPage.Location = new System.Drawing.Point(4, 26);
+            this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.myAlbumsPage.Name = "myAlbumsPage";
-            this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.myAlbumsPage.Size = new System.Drawing.Size(881, 546);
+            this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.myAlbumsPage.Size = new System.Drawing.Size(1177, 674);
             this.myAlbumsPage.TabIndex = 0;
             this.myAlbumsPage.Text = "Albums possédés";
             this.myAlbumsPage.UseVisualStyleBackColor = true;
@@ -86,19 +87,20 @@ namespace App
             // 
             this.ownedFlowLayoutPanel.AutoScroll = true;
             this.ownedFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(3, 2);
+            this.ownedFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ownedFlowLayoutPanel.Name = "ownedFlowLayoutPanel";
-            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
+            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(1171, 670);
             this.ownedFlowLayoutPanel.TabIndex = 0;
             // 
             // marketAlbumsPage
             // 
             this.marketAlbumsPage.Controls.Add(this.marketFlowLayoutPanel);
-            this.marketAlbumsPage.Location = new System.Drawing.Point(4, 22);
-            this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
+            this.marketAlbumsPage.Location = new System.Drawing.Point(4, 26);
+            this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.marketAlbumsPage.Name = "marketAlbumsPage";
-            this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.marketAlbumsPage.Size = new System.Drawing.Size(881, 546);
+            this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.marketAlbumsPage.Size = new System.Drawing.Size(1177, 674);
             this.marketAlbumsPage.TabIndex = 1;
             this.marketAlbumsPage.Text = "Albums sur le marché ";
             this.marketAlbumsPage.UseVisualStyleBackColor = true;
@@ -107,19 +109,20 @@ namespace App
             // 
             this.marketFlowLayoutPanel.AutoScroll = true;
             this.marketFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.marketFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            this.marketFlowLayoutPanel.Location = new System.Drawing.Point(3, 2);
+            this.marketFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
-            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
+            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(1171, 670);
             this.marketFlowLayoutPanel.TabIndex = 0;
             // 
             // wishesPage
             // 
             this.wishesPage.Controls.Add(this.wishedFlowLayoutPanel);
             this.wishesPage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.wishesPage.Location = new System.Drawing.Point(4, 22);
-            this.wishesPage.Margin = new System.Windows.Forms.Padding(2);
+            this.wishesPage.Location = new System.Drawing.Point(4, 26);
+            this.wishesPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wishesPage.Name = "wishesPage";
-            this.wishesPage.Size = new System.Drawing.Size(881, 553);
+            this.wishesPage.Size = new System.Drawing.Size(1177, 674);
             this.wishesPage.TabIndex = 2;
             this.wishesPage.Text = "Mes souhaits";
             this.wishesPage.UseVisualStyleBackColor = true;
@@ -130,8 +133,9 @@ namespace App
             this.wishedFlowLayoutPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.wishedFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wishedFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.wishedFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wishedFlowLayoutPanel.Name = "wishedFlowLayoutPanel";
-            this.wishedFlowLayoutPanel.Size = new System.Drawing.Size(881, 553);
+            this.wishedFlowLayoutPanel.Size = new System.Drawing.Size(1177, 674);
             this.wishedFlowLayoutPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -141,18 +145,20 @@ namespace App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchTextBox.BackColor = System.Drawing.Color.Beige;
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.searchTextBox.Location = new System.Drawing.Point(6, 60);
+            this.searchTextBox.Location = new System.Drawing.Point(8, 74);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(751, 23);
+            this.searchTextBox.Size = new System.Drawing.Size(1000, 26);
             this.searchTextBox.TabIndex = 5;
             // 
             // searchButton
             // 
             this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.searchButton.Location = new System.Drawing.Point(763, 50);
+            this.searchButton.Location = new System.Drawing.Point(1017, 62);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(114, 33);
+            this.searchButton.Size = new System.Drawing.Size(152, 41);
             this.searchButton.TabIndex = 6;
             this.searchButton.Text = "Rechercher";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -166,9 +172,11 @@ namespace App
             this.searchOptionsGroupBox.Controls.Add(this.seriesRadioButton);
             this.searchOptionsGroupBox.Controls.Add(this.authorRadioButton);
             this.searchOptionsGroupBox.Controls.Add(this.titleRadioButton);
-            this.searchOptionsGroupBox.Location = new System.Drawing.Point(11, 48);
+            this.searchOptionsGroupBox.Location = new System.Drawing.Point(15, 59);
+            this.searchOptionsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchOptionsGroupBox.Name = "searchOptionsGroupBox";
-            this.searchOptionsGroupBox.Size = new System.Drawing.Size(883, 89);
+            this.searchOptionsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchOptionsGroupBox.Size = new System.Drawing.Size(1177, 110);
             this.searchOptionsGroupBox.TabIndex = 0;
             this.searchOptionsGroupBox.TabStop = false;
             this.searchOptionsGroupBox.Text = "Options de recherches";
@@ -176,9 +184,10 @@ namespace App
             // genreRadioButton
             // 
             this.genreRadioButton.AutoSize = true;
-            this.genreRadioButton.Location = new System.Drawing.Point(158, 37);
+            this.genreRadioButton.Location = new System.Drawing.Point(211, 46);
+            this.genreRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genreRadioButton.Name = "genreRadioButton";
-            this.genreRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.genreRadioButton.Size = new System.Drawing.Size(69, 21);
             this.genreRadioButton.TabIndex = 3;
             this.genreRadioButton.Text = "Genre";
             this.genreRadioButton.UseVisualStyleBackColor = true;
@@ -187,9 +196,10 @@ namespace App
             // seriesRadioButton
             // 
             this.seriesRadioButton.AutoSize = true;
-            this.seriesRadioButton.Location = new System.Drawing.Point(158, 19);
+            this.seriesRadioButton.Location = new System.Drawing.Point(211, 23);
+            this.seriesRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.seriesRadioButton.Name = "seriesRadioButton";
-            this.seriesRadioButton.Size = new System.Drawing.Size(91, 17);
+            this.seriesRadioButton.Size = new System.Drawing.Size(119, 21);
             this.seriesRadioButton.TabIndex = 2;
             this.seriesRadioButton.Text = "Série de livres";
             this.seriesRadioButton.UseVisualStyleBackColor = true;
@@ -198,9 +208,10 @@ namespace App
             // authorRadioButton
             // 
             this.authorRadioButton.AutoSize = true;
-            this.authorRadioButton.Location = new System.Drawing.Point(6, 37);
+            this.authorRadioButton.Location = new System.Drawing.Point(8, 46);
+            this.authorRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.authorRadioButton.Name = "authorRadioButton";
-            this.authorRadioButton.Size = new System.Drawing.Size(56, 17);
+            this.authorRadioButton.Size = new System.Drawing.Size(71, 21);
             this.authorRadioButton.TabIndex = 1;
             this.authorRadioButton.Text = "Auteur";
             this.authorRadioButton.UseVisualStyleBackColor = true;
@@ -210,9 +221,10 @@ namespace App
             // 
             this.titleRadioButton.AutoSize = true;
             this.titleRadioButton.Checked = true;
-            this.titleRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.titleRadioButton.Location = new System.Drawing.Point(8, 23);
+            this.titleRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.titleRadioButton.Name = "titleRadioButton";
-            this.titleRadioButton.Size = new System.Drawing.Size(125, 17);
+            this.titleRadioButton.Size = new System.Drawing.Size(166, 21);
             this.titleRadioButton.TabIndex = 0;
             this.titleRadioButton.TabStop = true;
             this.titleRadioButton.Text = "Titre ou partie du titre";
@@ -223,11 +235,10 @@ namespace App
             // 
             this.currentUserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currentUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.currentUserLabel.Location = new System.Drawing.Point(700, 14);
-            this.currentUserLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.currentUserLabel.Location = new System.Drawing.Point(742, 20);
             this.currentUserLabel.Name = "currentUserLabel";
             this.currentUserLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.currentUserLabel.Size = new System.Drawing.Size(200, 13);
+            this.currentUserLabel.Size = new System.Drawing.Size(267, 16);
             this.currentUserLabel.TabIndex = 1;
             this.currentUserLabel.Text = "Utilisateur";
             this.currentUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -236,18 +247,20 @@ namespace App
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.welcomeLabel.Location = new System.Drawing.Point(11, 13);
+            this.welcomeLabel.Location = new System.Drawing.Point(15, 16);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(503, 17);
+            this.welcomeLabel.Size = new System.Drawing.Size(599, 20);
             this.welcomeLabel.TabIndex = 5;
             this.welcomeLabel.Text = "Bienvenue dans votre BDThèque, faites comme chez vous, c\'est moi qui offre !";
             // 
             // quitButton
             // 
             this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.quitButton.Location = new System.Drawing.Point(799, 737);
+            this.quitButton.Location = new System.Drawing.Point(1065, 907);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(101, 32);
+            this.quitButton.Size = new System.Drawing.Size(135, 39);
             this.quitButton.TabIndex = 6;
             this.quitButton.Text = "Quitter";
             this.quitButton.UseVisualStyleBackColor = true;
@@ -256,29 +269,41 @@ namespace App
             // addAlbumButton
             // 
             this.addAlbumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.addAlbumButton.Location = new System.Drawing.Point(11, 737);
+            this.addAlbumButton.Location = new System.Drawing.Point(15, 907);
+            this.addAlbumButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addAlbumButton.Name = "addAlbumButton";
-            this.addAlbumButton.Size = new System.Drawing.Size(188, 32);
+            this.addAlbumButton.Size = new System.Drawing.Size(251, 39);
             this.addAlbumButton.TabIndex = 7;
             this.addAlbumButton.Text = "Enregistrer un album";
             this.addAlbumButton.UseVisualStyleBackColor = true;
             this.addAlbumButton.Visible = false;
             this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
             // 
+            // disconnectBtn
+            // 
+            this.disconnectBtn.Location = new System.Drawing.Point(1028, 12);
+            this.disconnectBtn.Name = "disconnectBtn";
+            this.disconnectBtn.Size = new System.Drawing.Size(172, 35);
+            this.disconnectBtn.TabIndex = 8;
+            this.disconnectBtn.Text = "Se déconnecter";
+            this.disconnectBtn.UseVisualStyleBackColor = true;
+            this.disconnectBtn.Click += new System.EventHandler(this.disconnectBtn_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 781);
+            this.ClientSize = new System.Drawing.Size(1215, 961);
+            this.Controls.Add(this.disconnectBtn);
             this.Controls.Add(this.addAlbumButton);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.searchOptionsGroupBox);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.currentUserLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(927, 720);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1230, 875);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BDThèque";
@@ -314,5 +339,6 @@ namespace App
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.Button addAlbumButton;
+        private System.Windows.Forms.Button disconnectBtn;
     }
 }

@@ -54,6 +54,7 @@ namespace App
             }
 
             mainTabControl.SelectedTab = marketAlbumsPage;
+            
         }
 
 
@@ -285,6 +286,17 @@ namespace App
                 _albumRepository.Save(newAlbum);
                 RefreshTabs();
             }
+        }
+
+        private void disconnectBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Êtes-vous sûrs de vouloir vous déconnecter ?", "Déconnexion",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result is DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Retry;
+                this.Close();
+            }
+            
         }
     }
 }
