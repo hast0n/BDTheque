@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DAL.Services;
 using Domain;
@@ -11,28 +12,28 @@ namespace DAL.Repositories
         public IList<Album> GetByTitle(string title)
         {
             return Session.Query<Album>()
-                .Where(a => a.Title.ToLower().Contains(title.ToLower()))
+                .Where(a => a.Title.Contains(title.ToLower()))
                 .ToList();
         }
 
         public IList<Album> GetByAuthor(string author)
         {
             return Session.Query<Author>()
-                .SingleOrDefault(a => a.Name.ToLower().Equals(author.ToLower()))
+                .SingleOrDefault(a => a.Name.Equals(author, StringComparison.InvariantCultureIgnoreCase))
                 ?.Albums;
         }
 
         public IList<Album> GetBySeries(string series)
         {
             return Session.Query<Series>()
-                .SingleOrDefault(a => a.Name.ToLower().Equals(series.ToLower()))
+                .SingleOrDefault(a => a.Name.Equals(series, StringComparison.InvariantCultureIgnoreCase))
                 ?.Albums;
         }
 
         public IList<Album> GetByGenre(string genre)
         {
             return Session.Query<Genre>()
-                .SingleOrDefault(a => a.Name.ToLower().Equals(genre.ToLower()))
+                .SingleOrDefault(a => a.Name.Equals(genre, StringComparison.InvariantCultureIgnoreCase))
                 ?.Albums;
         }
 
