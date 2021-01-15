@@ -67,7 +67,7 @@ namespace App
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(889, 572);
+            this.mainTabControl.Size = new System.Drawing.Size(890, 571);
             this.mainTabControl.TabIndex = 4;
             // 
             // myAlbumsPage
@@ -98,7 +98,7 @@ namespace App
             this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
             this.marketAlbumsPage.Name = "marketAlbumsPage";
             this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.marketAlbumsPage.Size = new System.Drawing.Size(881, 546);
+            this.marketAlbumsPage.Size = new System.Drawing.Size(882, 545);
             this.marketAlbumsPage.TabIndex = 1;
             this.marketAlbumsPage.Text = "Albums sur le marché ";
             this.marketAlbumsPage.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@ namespace App
             this.marketFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.marketFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
             this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
-            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
+            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(878, 541);
             this.marketFlowLayoutPanel.TabIndex = 0;
             // 
             // wishesPage
@@ -223,7 +223,7 @@ namespace App
             // 
             this.currentUserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currentUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.currentUserLabel.Location = new System.Drawing.Point(700, 14);
+            this.currentUserLabel.Location = new System.Drawing.Point(701, 14);
             this.currentUserLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.currentUserLabel.Name = "currentUserLabel";
             this.currentUserLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -244,6 +244,7 @@ namespace App
             // 
             // quitButton
             // 
+            this.quitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.quitButton.Location = new System.Drawing.Point(799, 737);
             this.quitButton.Name = "quitButton";
@@ -255,6 +256,7 @@ namespace App
             // 
             // addAlbumButton
             // 
+            this.addAlbumButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addAlbumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.addAlbumButton.Location = new System.Drawing.Point(11, 737);
             this.addAlbumButton.Name = "addAlbumButton";
@@ -270,7 +272,7 @@ namespace App
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 781);
+            this.ClientSize = new System.Drawing.Size(912, 780);
             this.Controls.Add(this.addAlbumButton);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.welcomeLabel);
