@@ -67,7 +67,7 @@ namespace App
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(890, 571);
+            this.mainTabControl.Size = new System.Drawing.Size(889, 472);
             this.mainTabControl.TabIndex = 4;
             // 
             // myAlbumsPage
@@ -77,7 +77,7 @@ namespace App
             this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
             this.myAlbumsPage.Name = "myAlbumsPage";
             this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.myAlbumsPage.Size = new System.Drawing.Size(881, 546);
+            this.myAlbumsPage.Size = new System.Drawing.Size(881, 446);
             this.myAlbumsPage.TabIndex = 0;
             this.myAlbumsPage.Text = "Albums possédés";
             this.myAlbumsPage.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@ namespace App
             this.ownedFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
             this.ownedFlowLayoutPanel.Name = "ownedFlowLayoutPanel";
-            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
+            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(877, 442);
             this.ownedFlowLayoutPanel.TabIndex = 0;
             // 
             // marketAlbumsPage
@@ -119,7 +119,7 @@ namespace App
             this.wishesPage.Location = new System.Drawing.Point(4, 22);
             this.wishesPage.Margin = new System.Windows.Forms.Padding(2);
             this.wishesPage.Name = "wishesPage";
-            this.wishesPage.Size = new System.Drawing.Size(881, 553);
+            this.wishesPage.Size = new System.Drawing.Size(882, 545);
             this.wishesPage.TabIndex = 2;
             this.wishesPage.Text = "Mes souhaits";
             this.wishesPage.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@ namespace App
             this.wishedFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wishedFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.wishedFlowLayoutPanel.Name = "wishedFlowLayoutPanel";
-            this.wishedFlowLayoutPanel.Size = new System.Drawing.Size(881, 553);
+            this.wishedFlowLayoutPanel.Size = new System.Drawing.Size(882, 545);
             this.wishedFlowLayoutPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -223,7 +223,7 @@ namespace App
             // 
             this.currentUserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currentUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.currentUserLabel.Location = new System.Drawing.Point(701, 14);
+            this.currentUserLabel.Location = new System.Drawing.Point(700, 14);
             this.currentUserLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.currentUserLabel.Name = "currentUserLabel";
             this.currentUserLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -246,7 +246,7 @@ namespace App
             // 
             this.quitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.quitButton.Location = new System.Drawing.Point(799, 737);
+            this.quitButton.Location = new System.Drawing.Point(798, 638);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(101, 32);
             this.quitButton.TabIndex = 6;
@@ -258,7 +258,7 @@ namespace App
             // 
             this.addAlbumButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addAlbumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.addAlbumButton.Location = new System.Drawing.Point(11, 737);
+            this.addAlbumButton.Location = new System.Drawing.Point(11, 638);
             this.addAlbumButton.Name = "addAlbumButton";
             this.addAlbumButton.Size = new System.Drawing.Size(188, 32);
             this.addAlbumButton.TabIndex = 7;
@@ -272,7 +272,7 @@ namespace App
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(912, 780);
+            this.ClientSize = new System.Drawing.Size(911, 681);
             this.Controls.Add(this.addAlbumButton);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.welcomeLabel);
