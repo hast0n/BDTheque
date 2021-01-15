@@ -178,6 +178,8 @@ namespace App
                     break;
             }
 
+            result = result is null ? new List<Album>() : result;
+
             RefreshMarketAlbum(result);
             mainTabControl.SelectedTab = marketAlbumsPage;
         }

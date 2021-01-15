@@ -11,28 +11,28 @@ namespace DAL.Repositories
         public IList<Album> GetByTitle(string title)
         {
             return Session.Query<Album>()
-                .Where(a => a.Title.Contains(title))
+                .Where(a => a.Title.ToLower().Contains(title.ToLower()))
                 .ToList();
         }
 
         public IList<Album> GetByAuthor(string author)
         {
             return Session.Query<Author>()
-                .SingleOrDefault(a => a.Name.Equals(author))
+                .SingleOrDefault(a => a.Name.ToLower().Equals(author.ToLower()))
                 ?.Albums;
         }
 
         public IList<Album> GetBySeries(string series)
         {
             return Session.Query<Series>()
-                .SingleOrDefault(a => a.Name.Equals(series))
+                .SingleOrDefault(a => a.Name.ToLower().Equals(series.ToLower()))
                 ?.Albums;
         }
 
         public IList<Album> GetByGenre(string genre)
         {
             return Session.Query<Genre>()
-                .SingleOrDefault(a => a.Name.Equals(genre))
+                .SingleOrDefault(a => a.Name.ToLower().Equals(genre.ToLower()))
                 ?.Albums;
         }
 
