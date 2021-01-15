@@ -81,7 +81,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\Content.sql" />
+    <Content Include="DB\content.sql" />
     <Content Include="DB\Database.sql" />
     <Content Include="DB\Structure.sql" />
     <Content Include="hibernate.cfg.xml">

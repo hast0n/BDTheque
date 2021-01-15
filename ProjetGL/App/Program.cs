@@ -25,6 +25,7 @@ namespace App
             IAlbumRepository albumRepo = new AlbumRepository();
             IUserRepository userRepo = new UserRepository();
 
+            #region Connexion standard
             using (var loginForm = new LoginForm(userRepo))
             {
                 resultLogin = loginForm.ShowDialog();
@@ -53,13 +54,19 @@ namespace App
                     }
                 }
             }
-            // Admin Profile, décommentez les trois lignes ci-dessous et commentez les lignes ci-dessus à partir de "using" ci-dessus
-            //user = userRepo.GetUser("mdevreese@ensc.fr",
-            //    "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17");
-            //Application.Run(new MainForm(user, albumRepo, userRepo));
+            #endregion
 
-            // User Profile, décommentez la ligne ci-dessous et commentez les lignes ci-dessus à partir de "using" ci-dessus
-            // Application.Run(new MainForm(userRepo.GetUser("toto@lambada.com", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17"), albumRepo, userRepo));
+            #region Connexion Administrateur
+            // *** Profil administrateur : décommentez les 2 lignes ci-dessous et commentez la région "Connexion Standard"
+            // user = userRepo.GetUser("mdevreese@ensc.fr", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17");
+            // Application.Run(new MainForm(user, albumRepo, userRepo));
+            #endregion
+
+            #region Connexion Utilisateur
+            // *** Profil utilisateur : décommentez les 2 lignes ci-dessous et commentez les région "Connexion Standard" et "Connexion Utilisateur"
+            // user = userRepo.GetUser("toto@lambada.com", "f4f263e439cf40925e6a412387a9472a6773c2580212a4fb50d224d3a817de17");
+            // Application.Run(new MainForm(user, albumRepo, userRepo));
+            #endregion
         }
     }
 }

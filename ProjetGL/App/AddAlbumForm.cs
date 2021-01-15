@@ -17,8 +17,22 @@ namespace App
         public string Isbn => isbnTextBox.Text.Trim();
         public string Description => descriptionRichTextBox.Text.Trim();
         public Category Category => (Category)categoryComboBox.SelectedItem;
-        public Series Series => (Series)seriesComboBox.SelectedItem;
         public byte[] Cover { get; set; }
+
+        public Series Series
+        {
+            get
+            {
+                var selectedItem = seriesComboBox.SelectedItem;
+
+                if (selectedItem.Equals(_defautSeries))
+                    return null;
+                
+                return (Series)selectedItem;
+            }
+        }
+
+        private Series _defautSeries = new Series("Aucune");
 
         public List<Author> Authors {
             get
@@ -53,8 +67,11 @@ namespace App
 
             authorsCheckedListBox.Items.AddRange(authors);
             genresCheckedListBox.Items.AddRange(genres);
-            seriesComboBox.DataSource = _albumRepository.GetSeries();
             categoryComboBox.DataSource = _albumRepository.GetCategories();
+            
+            var series = _albumRepository.GetSeries();
+            series.Insert(0, _defautSeries);
+            seriesComboBox.DataSource = series;
 
             UpdateCoverPictureBox();
         }
@@ -67,12 +84,10 @@ namespace App
 
             if (string.IsNullOrWhiteSpace(Title)) field = "Titre";
             else if (string.IsNullOrWhiteSpace(Publisher)) field = "Éditeur";
-            else if (Series is null) field = "Série de livres";
             else if (Authors.Count < 1) field = "Auteur(s)";
             else if (string.IsNullOrWhiteSpace(Description)) field = "Description";
             else if (string.IsNullOrWhiteSpace(Publisher)) field = "ISBN-10 / ASIN";
             else if (Category is null) field = "Category";
-            else if (Genres.Count < 1) field = "Genre(s)";
             else if (Cover is null) field = "Image de couverture";
 
             if (!string.IsNullOrEmpty(field))

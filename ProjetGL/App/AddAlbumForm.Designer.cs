@@ -194,7 +194,6 @@
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.saveButton.Location = new System.Drawing.Point(531, 544);
             this.saveButton.Name = "saveButton";

@@ -25,10 +25,10 @@ create table album (
 	album_title varchar(200) not null,
 	album_isbn varchar(200) not null,
 	album_publisher varchar(200) not null,
-	album_description text,
+	album_description text not null,
 	category_id integer not null,
 	series_id integer,
-	cover blob not null
+	album_cover blob not null
 );
 
 create table genre (
@@ -66,17 +66,17 @@ create table album_author (
 create table user_own_album (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
-	user_id integer not null,
+	user_id integer not null
 );
 
 create table user_wish_album (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
-	user_id integer not null,
+	user_id integer not null
 );
 
 create table user_like_album (
 	id integer not null primary key auto_increment,
 	album_id integer not null,
-	user_id integer not null,
+	user_id integer not null
 );
