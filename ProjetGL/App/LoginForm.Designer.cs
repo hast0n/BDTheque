@@ -42,55 +42,50 @@ namespace App
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(161, 92);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernameLabel.Location = new System.Drawing.Point(121, 75);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(97, 17);
+            this.usernameLabel.Size = new System.Drawing.Size(72, 13);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Adresse mail :";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(161, 139);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Location = new System.Drawing.Point(121, 113);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(101, 17);
+            this.passwordLabel.Size = new System.Drawing.Size(77, 13);
             this.passwordLabel.TabIndex = 1;
             this.passwordLabel.Text = "Mot de passe :";
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(289, 89);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usernameTextBox.Location = new System.Drawing.Point(217, 72);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(132, 22);
+            this.usernameTextBox.Size = new System.Drawing.Size(100, 20);
             this.usernameTextBox.TabIndex = 2;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(289, 135);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Location = new System.Drawing.Point(217, 110);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(132, 22);
+            this.passwordTextBox.PasswordChar = '●';
+            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 3;
             // 
             // loginInfoLabel
             // 
             this.loginInfoLabel.AutoSize = true;
-            this.loginInfoLabel.Location = new System.Drawing.Point(132, 36);
-            this.loginInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loginInfoLabel.Location = new System.Drawing.Point(99, 29);
             this.loginInfoLabel.Name = "loginInfoLabel";
-            this.loginInfoLabel.Size = new System.Drawing.Size(377, 17);
+            this.loginInfoLabel.Size = new System.Drawing.Size(284, 13);
             this.loginInfoLabel.TabIndex = 4;
             this.loginInfoLabel.Text = "Connectez-vous pour accéder à votre espace bibliothèque";
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(289, 190);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Location = new System.Drawing.Point(217, 154);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(133, 28);
+            this.loginButton.Size = new System.Drawing.Size(100, 23);
             this.loginButton.TabIndex = 5;
             this.loginButton.Text = "Connexion";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -99,9 +94,8 @@ namespace App
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 28);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 7;
             // 
             // wrongCredInfoLabel
@@ -109,19 +103,18 @@ namespace App
             this.wrongCredInfoLabel.AutoSize = true;
             this.wrongCredInfoLabel.BackColor = System.Drawing.SystemColors.Control;
             this.wrongCredInfoLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.wrongCredInfoLabel.Location = new System.Drawing.Point(161, 236);
-            this.wrongCredInfoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.wrongCredInfoLabel.Location = new System.Drawing.Point(121, 192);
             this.wrongCredInfoLabel.Name = "wrongCredInfoLabel";
-            this.wrongCredInfoLabel.Size = new System.Drawing.Size(384, 17);
+            this.wrongCredInfoLabel.Size = new System.Drawing.Size(280, 13);
             this.wrongCredInfoLabel.TabIndex = 6;
             this.wrongCredInfoLabel.Text = "Les informartions saisies sont erronées. Veuillez réessayer.";
             this.wrongCredInfoLabel.Visible = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 282);
+            this.ClientSize = new System.Drawing.Size(512, 229);
             this.Controls.Add(this.wrongCredInfoLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginButton);
@@ -130,7 +123,6 @@ namespace App
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.Text = "BDThèque - Connexion";
             this.ResumeLayout(false);
