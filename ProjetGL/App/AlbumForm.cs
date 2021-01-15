@@ -152,6 +152,5 @@ namespace App
             manageWishListButton.Text = "Retirer de ma liste de souahits";
             IsWished = true;
         }
-
     }
 }

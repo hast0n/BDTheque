@@ -233,6 +233,7 @@ namespace App
                     searchButton.PerformClick();
                 }
                 else RefreshMarketAlbum();
+
                 RefreshWishedAlbum();
                 RefreshOwnedAlbum();
 
