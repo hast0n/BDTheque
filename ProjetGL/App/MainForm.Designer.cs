@@ -131,7 +131,6 @@ namespace App
             this.wishedFlowLayoutPanel.Name = "wishedFlowLayoutPanel";
             this.wishedFlowLayoutPanel.Size = new System.Drawing.Size(881, 553);
             this.wishedFlowLayoutPanel.TabIndex = 0;
-            this.wishedFlowLayoutPanel.WrapContents = false;
             // 
             // searchTextBox
             // 

@@ -13,7 +13,7 @@ namespace DAL.Repositories
         public IList<Album> GetByTitle(string title)
         {
             return Session.Query<Album>()
-                .Where(a => a.Title.Contains(title.ToLower()))
+                .Where(a => a.Title.Like($"%{title}%"))// .Contains(title.ToLower()))
                 .ToList();
         }
 

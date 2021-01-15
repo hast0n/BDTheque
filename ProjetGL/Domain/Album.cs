@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,6 @@ namespace Domain
             List<Genre> genres,
             Category category,
             Series series)
-            //Cover cover)
         {
             Title = title;
             Isbn = isbn;
@@ -44,7 +44,20 @@ namespace Domain
             Genres = genres;
             Series = series;
             Category = category;
-            //Cover = cover.File;
+        }
+
+        // **** Read Image into Byte Array from Filesystem
+        public static byte[] GetByteArrayFromImage(string filePath)
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+
+            byte[] photo = br.ReadBytes((int)fs.Length);
+
+            br.Close();
+            fs.Close();
+
+            return photo;
         }
 
         public override string ToString() => $"{Title}, {string.Join(" & ", Category)}, {Publisher}";

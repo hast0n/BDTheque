@@ -218,7 +218,11 @@ namespace App
         {
             if (NeedRefresh)
             {
-                RefreshMarketAlbum();
+                if (!searchTextBox.Text.Equals(SearchBarPlaceholder))
+                {
+                    searchButton.PerformClick();
+                }
+                else RefreshMarketAlbum();
                 RefreshWishedAlbum();
                 RefreshOwnedAlbum();
 
