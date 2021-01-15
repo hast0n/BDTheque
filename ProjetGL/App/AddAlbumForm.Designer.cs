@@ -261,6 +261,7 @@
             // coverOpenFileDialog
             // 
             this.coverOpenFileDialog.FileName = "tmp_cover";
+            this.coverOpenFileDialog.Filter = "JPEG files (*.jpg)|*.jpg|PNG files (*.png)|*.png|All files (*.*)|*.*";
             // 
             // addCoverButton
             // 

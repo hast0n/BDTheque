@@ -108,21 +108,37 @@ namespace App
             DialogResult result = coverOpenFileDialog.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
-
                 string file = coverOpenFileDialog.FileName;
+                
+                FileInfo fi = new FileInfo(file);
+                long fileSize = fi.Length; //The size of the current file in bytes.file 
+
+                if (fileSize > 65535)
+                {
+                    MessageBox.Show(
+                        $"L'image de couverture spécifiée dépasse les 65535kio (taille : {fileSize}kio), veuillez en essayer une autre.",
+                        "Image trop lourde",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+                    return;
+                }
+
+
                 try
                 {
                     Cover = Album.GetByteArrayFromImage(file);
-                    UpdateCoverPictureBox();
                 }
                 catch (IOException)
                 {
                     MessageBox.Show(
-                        "Le fichier spécifié est invalide, veuillez réeesayer.",
-                        "Format invalide",
+                        "Nous n'avons pas réussi à importer le fichier, veuillez réeesayer.",
+                        "Erreur d'importation",
                         MessageBoxButtons.OK, 
                         MessageBoxIcon.Error);
                 }
+
+                UpdateCoverPictureBox();
             }
         }
 

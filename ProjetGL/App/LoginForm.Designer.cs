@@ -61,7 +61,7 @@ namespace App
             // 
             this.usernameTextBox.Location = new System.Drawing.Point(217, 72);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(166, 20);
             this.usernameTextBox.TabIndex = 2;
             // 
             // passwordTextBox
@@ -69,7 +69,7 @@ namespace App
             this.passwordTextBox.Location = new System.Drawing.Point(217, 110);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(166, 20);
             this.passwordTextBox.TabIndex = 3;
             // 
             // loginInfoLabel
