@@ -48,6 +48,20 @@ namespace Domain
             //Cover = cover.File;
         }
 
+        // **** Read Image into Byte Array from Filesystem
+        public static byte[] GetByteArrayFromImage(string filePath)
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+
+            byte[] photo = br.ReadBytes((int)fs.Length);
+
+            br.Close();
+            fs.Close();
+
+            return photo;
+        }
+
         public override string ToString() => $"{Title}, {string.Join(" & ", Category)}, {Publisher}";
     }
 }
