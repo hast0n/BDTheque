@@ -123,6 +123,8 @@ namespace App
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
+            this.MaximumSize = new System.Drawing.Size(528, 268);
+            this.MinimumSize = new System.Drawing.Size(528, 268);
             this.Name = "LoginForm";
             this.Text = "BDThèque - Connexion";
             this.ResumeLayout(false);

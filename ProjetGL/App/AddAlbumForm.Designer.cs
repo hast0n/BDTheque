@@ -138,7 +138,7 @@
             this.descriptionRichTextBox.Location = new System.Drawing.Point(10, 24);
             this.descriptionRichTextBox.Name = "descriptionRichTextBox";
             this.descriptionRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionRichTextBox.Size = new System.Drawing.Size(375, 206);
+            this.descriptionRichTextBox.Size = new System.Drawing.Size(366, 206);
             this.descriptionRichTextBox.TabIndex = 29;
             this.descriptionRichTextBox.Text = "";
             // 
@@ -152,7 +152,7 @@
             this.descriptionGroupBox.Location = new System.Drawing.Point(269, 289);
             this.descriptionGroupBox.Name = "descriptionGroupBox";
             this.descriptionGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.descriptionGroupBox.Size = new System.Drawing.Size(395, 240);
+            this.descriptionGroupBox.Size = new System.Drawing.Size(386, 240);
             this.descriptionGroupBox.TabIndex = 30;
             this.descriptionGroupBox.TabStop = false;
             this.descriptionGroupBox.Text = "Description de l\'ouvrage :";
@@ -166,7 +166,7 @@
             this.titleTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.titleTextBox.Location = new System.Drawing.Point(319, 14);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(345, 23);
+            this.titleTextBox.Size = new System.Drawing.Size(336, 23);
             this.titleTextBox.TabIndex = 31;
             // 
             // publisherTextBox
@@ -178,7 +178,7 @@
             this.publisherTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.publisherTextBox.Location = new System.Drawing.Point(334, 50);
             this.publisherTextBox.Name = "publisherTextBox";
-            this.publisherTextBox.Size = new System.Drawing.Size(330, 23);
+            this.publisherTextBox.Size = new System.Drawing.Size(321, 23);
             this.publisherTextBox.TabIndex = 33;
             // 
             // isbnTextBox
@@ -195,7 +195,7 @@
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.saveButton.Location = new System.Drawing.Point(531, 544);
+            this.saveButton.Location = new System.Drawing.Point(522, 544);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(136, 45);
             this.saveButton.TabIndex = 38;
@@ -211,7 +211,7 @@
             this.authorsCheckedListBox.FormattingEnabled = true;
             this.authorsCheckedListBox.Location = new System.Drawing.Point(344, 124);
             this.authorsCheckedListBox.Name = "authorsCheckedListBox";
-            this.authorsCheckedListBox.Size = new System.Drawing.Size(320, 154);
+            this.authorsCheckedListBox.Size = new System.Drawing.Size(311, 154);
             this.authorsCheckedListBox.Sorted = true;
             this.authorsCheckedListBox.TabIndex = 39;
             // 
@@ -220,7 +220,7 @@
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cancelButton.Location = new System.Drawing.Point(367, 544);
+            this.cancelButton.Location = new System.Drawing.Point(358, 544);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(136, 45);
             this.cancelButton.TabIndex = 41;
@@ -255,7 +255,7 @@
             this.seriesComboBox.FormattingEnabled = true;
             this.seriesComboBox.Location = new System.Drawing.Point(372, 85);
             this.seriesComboBox.Name = "seriesComboBox";
-            this.seriesComboBox.Size = new System.Drawing.Size(292, 24);
+            this.seriesComboBox.Size = new System.Drawing.Size(283, 24);
             this.seriesComboBox.TabIndex = 44;
             // 
             // coverOpenFileDialog
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 601);
+            this.ClientSize = new System.Drawing.Size(668, 601);
             this.Controls.Add(this.addCoverButton);
             this.Controls.Add(this.seriesComboBox);
             this.Controls.Add(this.genresCheckedListBox);

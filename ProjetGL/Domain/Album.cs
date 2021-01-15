@@ -45,7 +45,7 @@ namespace Domain
             Genres = genres;
             Series = series;
             Category = category;
-            //Cover = cover.File;
+            Cover = cover;
         }
 
         // **** Read Image into Byte Array from Filesystem

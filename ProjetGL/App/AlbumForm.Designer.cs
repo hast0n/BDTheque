@@ -137,7 +137,7 @@
             this.descriptionRichTextBox.Name = "descriptionRichTextBox";
             this.descriptionRichTextBox.ReadOnly = true;
             this.descriptionRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.descriptionRichTextBox.Size = new System.Drawing.Size(526, 260);
+            this.descriptionRichTextBox.Size = new System.Drawing.Size(573, 252);
             this.descriptionRichTextBox.TabIndex = 29;
             this.descriptionRichTextBox.Text = "";
             // 
@@ -151,7 +151,7 @@
             this.descriptionGroupBox.Location = new System.Drawing.Point(253, 163);
             this.descriptionGroupBox.Name = "descriptionGroupBox";
             this.descriptionGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.descriptionGroupBox.Size = new System.Drawing.Size(546, 294);
+            this.descriptionGroupBox.Size = new System.Drawing.Size(593, 286);
             this.descriptionGroupBox.TabIndex = 30;
             this.descriptionGroupBox.TabStop = false;
             this.descriptionGroupBox.Text = "Description de l\'ouvrage :";
@@ -167,7 +167,7 @@
             this.titleTextBox.Location = new System.Drawing.Point(354, 13);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.ReadOnly = true;
-            this.titleTextBox.Size = new System.Drawing.Size(445, 19);
+            this.titleTextBox.Size = new System.Drawing.Size(492, 19);
             this.titleTextBox.TabIndex = 31;
             this.titleTextBox.Text = "Title";
             // 
@@ -182,7 +182,7 @@
             this.authorsTextBox.Location = new System.Drawing.Point(354, 54);
             this.authorsTextBox.Name = "authorsTextBox";
             this.authorsTextBox.ReadOnly = true;
-            this.authorsTextBox.Size = new System.Drawing.Size(445, 16);
+            this.authorsTextBox.Size = new System.Drawing.Size(492, 16);
             this.authorsTextBox.TabIndex = 32;
             this.authorsTextBox.Text = "Authors";
             // 
@@ -197,7 +197,7 @@
             this.publisherTextBox.Location = new System.Drawing.Point(354, 89);
             this.publisherTextBox.Name = "publisherTextBox";
             this.publisherTextBox.ReadOnly = true;
-            this.publisherTextBox.Size = new System.Drawing.Size(445, 16);
+            this.publisherTextBox.Size = new System.Drawing.Size(492, 16);
             this.publisherTextBox.TabIndex = 33;
             this.publisherTextBox.Text = "Publisher";
             // 
@@ -212,7 +212,7 @@
             this.seriesTextBox.Location = new System.Drawing.Point(354, 123);
             this.seriesTextBox.Name = "seriesTextBox";
             this.seriesTextBox.ReadOnly = true;
-            this.seriesTextBox.Size = new System.Drawing.Size(445, 16);
+            this.seriesTextBox.Size = new System.Drawing.Size(492, 16);
             this.seriesTextBox.TabIndex = 34;
             this.seriesTextBox.Text = "Series";
             // 
@@ -227,7 +227,7 @@
             this.isbnTextBox.Location = new System.Drawing.Point(107, 308);
             this.isbnTextBox.Name = "isbnTextBox";
             this.isbnTextBox.ReadOnly = true;
-            this.isbnTextBox.Size = new System.Drawing.Size(158, 14);
+            this.isbnTextBox.Size = new System.Drawing.Size(205, 14);
             this.isbnTextBox.TabIndex = 35;
             this.isbnTextBox.Text = "[ISBN]";
             // 
@@ -242,7 +242,7 @@
             this.categoryTextBox.Location = new System.Drawing.Point(77, 333);
             this.categoryTextBox.Name = "categoryTextBox";
             this.categoryTextBox.ReadOnly = true;
-            this.categoryTextBox.Size = new System.Drawing.Size(188, 14);
+            this.categoryTextBox.Size = new System.Drawing.Size(235, 14);
             this.categoryTextBox.TabIndex = 36;
             this.categoryTextBox.Text = "Category";
             this.categoryTextBox.MouseHover += new System.EventHandler(this.categoryTextBox_MouseHover);
@@ -259,7 +259,7 @@
             this.genresTextBox.Multiline = true;
             this.genresTextBox.Name = "genresTextBox";
             this.genresTextBox.ReadOnly = true;
-            this.genresTextBox.Size = new System.Drawing.Size(198, 85);
+            this.genresTextBox.Size = new System.Drawing.Size(245, 85);
             this.genresTextBox.TabIndex = 37;
             this.genresTextBox.Text = "Genres";
             this.genresTextBox.MouseHover += new System.EventHandler(this.genresTextBox_MouseHover);
@@ -270,7 +270,7 @@
             this.manageOwnedButton.BackColor = System.Drawing.Color.PaleGreen;
             this.manageOwnedButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manageOwnedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.manageOwnedButton.Location = new System.Drawing.Point(661, 466);
+            this.manageOwnedButton.Location = new System.Drawing.Point(708, 458);
             this.manageOwnedButton.Name = "manageOwnedButton";
             this.manageOwnedButton.Size = new System.Drawing.Size(138, 67);
             this.manageOwnedButton.TabIndex = 38;
@@ -284,7 +284,7 @@
             this.manageWishListButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.manageWishListButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manageWishListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.manageWishListButton.Location = new System.Drawing.Point(503, 466);
+            this.manageWishListButton.Location = new System.Drawing.Point(550, 458);
             this.manageWishListButton.Name = "manageWishListButton";
             this.manageWishListButton.Size = new System.Drawing.Size(138, 67);
             this.manageWishListButton.TabIndex = 39;
@@ -296,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 542);
+            this.ClientSize = new System.Drawing.Size(858, 534);
             this.Controls.Add(this.manageWishListButton);
             this.Controls.Add(this.manageOwnedButton);
             this.Controls.Add(this.genresTextBox);
