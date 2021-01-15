@@ -14,7 +14,7 @@
     <property name="Isbn" column="album_isbn" not-null="true"/>
     <property name="Publisher" column="album_publisher" not-null="true"/>
     <property name="Description" column="album_description" not-null="true"/>
-    <property name="Cover" column="cover" not-null="true"/>
+    <property name="Cover" column="album_cover" not-null="true"/>
 
     <!-- Mapping des associations de la classe -->
     <many-to-one name="Category" class="Category" column="category_id" not-null="true"/>

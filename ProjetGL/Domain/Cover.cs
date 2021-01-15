@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,7 @@ namespace Domain
         {
             File = GetPhoto(photoFilePath);
         }
+
         // **** Read Image into Byte Array from Filesystem
         public static byte[] GetPhoto(string filePath)
         {
