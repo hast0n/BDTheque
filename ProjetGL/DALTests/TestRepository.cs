@@ -5,7 +5,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DAL;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-
+using Domain;
+using NHibernate.Linq;
+using System.Linq;
 
 namespace DALTests
 {
@@ -15,6 +17,7 @@ namespace DALTests
     [TestClass]
     public class TestRepository : Repository
     {
+
         internal static void ResetBDD()
         {
             Session.Clear();
@@ -22,7 +25,7 @@ namespace DALTests
             //Execute("create database if not exists albums character set utf8 collate utf8_unicode_ci; use albums; grant all privileges on albums.* to 'albums_user'@'localhost' identified by 'secret'; ");
             Execute("drop table if exists `user`; drop table if exists album; drop table if exists genre; drop table if exists category; drop table if exists author;drop table if exists series; drop table if exists user_album; drop table if exists album_author; drop table if exists album_genre; drop table if exists user_like_album; drop table if exists user_own_album; drop table if exists user_wish_album; ");
             Execute("create table `user` ( user_id integer not null primary key auto_increment, user_last_name varchar(100) not null, user_first_name varchar(100) not null, user_mail varchar(100) not null, user_privilege integer, user_hash varchar(100)); ");
-            Execute("create table album ( album_id integer not null primary key auto_increment, album_title varchar(200) not null, album_isbn varchar(200) not null, album_publisher varchar(200) not null, album_description text, category_id integer not null, series_id integer, cover blob not null ); ");
+            Execute("create table album ( album_id integer not null primary key auto_increment, album_title varchar(200) not null, album_isbn varchar(200) not null, album_publisher varchar(200) not null, album_description text, category_id integer not null, series_id integer, album_cover blob not null ); ");
             Execute("create table genre ( genre_id integer not null primary key auto_increment, genre_name varchar(200) not null ); ");
             Execute("create table category ( category_id integer not null primary key auto_increment, category_name varchar(200) not null ); ");
             Execute("create table author ( author_id integer not null primary key auto_increment, author_name varchar(200) not null ); ");
@@ -62,5 +65,10 @@ namespace DALTests
             ISQLQuery query = Session.CreateSQLQuery(sql);
             query.ExecuteUpdate();
         }
+        public static List<Genre> SampleGenreList => Session.Query<Genre>().ToList();
+        public static Category SampleCategory => Session.Query<Category>().FirstOrDefault();
+        public static Series SampleSeries => Session.Query<Series>().FirstOrDefault();
+        public static List<Author> SampleAuthorList => Session.Query<Author>().ToList();
+
     }
 }

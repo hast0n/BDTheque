@@ -17,9 +17,10 @@ namespace Domain
 
         }
 
-        public Category(string name)
+        public Category(string name, IList<Album> albums)
         {
             Name = name;
+            Albums = albums;
         }
 
         public override string ToString() => Name;
