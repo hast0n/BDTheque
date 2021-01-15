@@ -86,9 +86,9 @@
             this.genresInfoLabel.AutoSize = true;
             this.genresInfoLabel.Location = new System.Drawing.Point(12, 425);
             this.genresInfoLabel.Name = "genresInfoLabel";
-            this.genresInfoLabel.Size = new System.Drawing.Size(47, 13);
+            this.genresInfoLabel.Size = new System.Drawing.Size(53, 13);
             this.genresInfoLabel.TabIndex = 23;
-            this.genresInfoLabel.Text = "Genres :";
+            this.genresInfoLabel.Text = "Genre(s) :";
             // 
             // titleInfoLabel
             // 

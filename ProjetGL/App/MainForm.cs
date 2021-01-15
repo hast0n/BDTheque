@@ -34,9 +34,7 @@ namespace App
 
             currentUserLabel.Text = user.ToString();
             
-            RefreshMarketAlbum();
-            RefreshOwnedAlbum();
-            RefreshWishedAlbum();
+            RefreshTabs();
 
             searchTextBox.GotFocus += RemoveText;
             searchTextBox.LostFocus += AddText;
@@ -72,6 +70,12 @@ namespace App
             }
         }
 
+        public void RefreshTabs()
+        {
+            RefreshMarketAlbum();
+            RefreshOwnedAlbum();
+            RefreshWishedAlbum();
+        }
 
         private void RefreshMarketAlbum(IList<Album> albumList = null)
         {
@@ -274,6 +278,7 @@ namespace App
                 };
                 
                 _albumRepository.Save(newAlbum);
+                RefreshTabs();
             }
         }
     }

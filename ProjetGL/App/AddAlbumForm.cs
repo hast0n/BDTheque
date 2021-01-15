@@ -61,8 +61,30 @@ namespace App
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            string message = "Le champ \"{0}\" est incomplet, veuillez réessayer.";
+            string caption = "Champ invalide";
+            string field = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(Title)) field = "Titre";
+            else if (string.IsNullOrWhiteSpace(Publisher)) field = "Éditeur";
+            else if (Series is null) field = "Série de livres";
+            else if (Authors.Count < 1) field = "Auteur(s)";
+            else if (string.IsNullOrWhiteSpace(Description)) field = "Description";
+            else if (string.IsNullOrWhiteSpace(Publisher)) field = "ISBN-10 / ASIN";
+            else if (Category is null) field = "Category";
+            else if (Genres.Count < 1) field = "Genre(s)";
+            else if (Cover is null) field = "Image de couverture";
+
+            if (!string.IsNullOrEmpty(field))
+            {
+                MessageBox.Show(string.Format(message, field), caption, 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void addCoverButton_Click(object sender, EventArgs e)
