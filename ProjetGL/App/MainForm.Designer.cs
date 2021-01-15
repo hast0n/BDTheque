@@ -283,6 +283,7 @@ namespace App
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BDThèque";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTabControl.ResumeLayout(false);
             this.myAlbumsPage.ResumeLayout(false);
             this.marketAlbumsPage.ResumeLayout(false);

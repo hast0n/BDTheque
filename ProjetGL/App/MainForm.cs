@@ -33,7 +33,10 @@ namespace App
             _userRepository = userRepo;
 
             currentUserLabel.Text = user.ToString();
-            
+        }
+        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             RefreshTabs();
 
             searchTextBox.GotFocus += RemoveText;
@@ -49,8 +52,10 @@ namespace App
                 this.Text += " - Administrateur";
                 addAlbumButton.Visible = true;
             }
+
+            mainTabControl.SelectedTab = marketAlbumsPage;
         }
-        
+
 
         public void RemoveText(object sender, EventArgs e)
         {
