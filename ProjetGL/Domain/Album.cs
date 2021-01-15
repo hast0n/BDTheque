@@ -34,7 +34,8 @@ namespace Domain
             List<Author> authors,
             List<Genre> genres,
             Category category,
-            Series series)
+            Series series,
+            byte[] cover)
         {
             Title = title;
             Isbn = isbn;
@@ -44,20 +45,7 @@ namespace Domain
             Genres = genres;
             Series = series;
             Category = category;
-        }
-
-        // **** Read Image into Byte Array from Filesystem
-        public static byte[] GetByteArrayFromImage(string filePath)
-        {
-            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-
-            byte[] photo = br.ReadBytes((int)fs.Length);
-
-            br.Close();
-            fs.Close();
-
-            return photo;
+            //Cover = cover.File;
         }
 
         public override string ToString() => $"{Title}, {string.Join(" & ", Category)}, {Publisher}";

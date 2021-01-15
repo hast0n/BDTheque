@@ -71,7 +71,7 @@ namespace DALTests
             Assert.AreEqual(actualAlbum, expectedAlbum);
         }
         [TestMethod]
-        public void AuthorGetAllTest()
+        public void AlbumGetAllTest()
         {
             var albumRepository = new AlbumRepository();
             var allAlbum = albumRepository.GetAll();
@@ -84,23 +84,21 @@ namespace DALTests
             string expectedAlbum = "Fullmetal Alchemist - tome 01, Manga, Kurokawa, Fullmetal Alchemist - tome 02, Manga, Kurokawa, Tome 1 - Planète Dakoï, Bandes dessinées, Soleil Productions, ";
             Assert.AreEqual(actualAlbum, expectedAlbum);
         }
-        //[TestMethod]
-        //public void SaveAlbumTest()
-        //{
-        //    var albumRepository = new AlbumRepository();
-        //    var newAlbum = new Album("Titre", "99334", "Publisher", "Decription", new List<Author> { new Author("Author") }, new List<Genre> {new Genre("Genre")}, new Category("Category"), new Series("Series"));
-        //    albumRepository.Save(newAlbum);
-        //    var allAlbum = albumRepository.GetAll();
-        //    Assert.AreEqual(8, allAlbum.Count);
-        //    string actualAlbum = "";
-        //    foreach (Album aa in allAlbum)
-        //    {
-        //        actualAlbum += aa.ToString() + ", ";
-        //    }
-        //    string expectedAlbum = "Baptiste Pesquet, Bernard Claverie, Alexandre Moix, Eric Johannssen, Hiromu ARAKAWA, Yoshihiro Togashi, Crisse, Un nouvel Auteur, ";
-        //    Assert.AreEqual(actualAlbum, expectedAlbum);
-        //}
-
-
+        [TestMethod]
+        public void SaveAlbumTest()
+        {
+            var albumRepository = new AlbumRepository();
+            var newAlbum = new Album("Titre", "99334", "Publisher", "Decription", TestRepository.SampleAuthorList, TestRepository.SampleGenreList, TestRepository.SampleCategory , TestRepository.SampleSeries, TestResources.album_test_cover);
+            albumRepository.Save(newAlbum);
+            var allAlbum = albumRepository.GetAll();
+            Assert.AreEqual(4, allAlbum.Count);
+            string actualAlbum = "";
+            foreach (Album aa in allAlbum)
+            {
+                actualAlbum += aa.ToString() + ", ";
+            }
+            string expectedAlbum = "Fullmetal Alchemist - tome 01, Manga, Kurokawa, Fullmetal Alchemist - tome 02, Manga, Kurokawa, Tome 1 - Planète Dakoï, Bandes dessinées, Soleil Productions, Titre, Manga, Publisher, ";
+            Assert.AreEqual(actualAlbum, expectedAlbum);
+        }
     }
 }
