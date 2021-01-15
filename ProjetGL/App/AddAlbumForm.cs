@@ -93,6 +93,7 @@ namespace App
             DialogResult result = coverOpenFileDialog.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
+
                 string file = coverOpenFileDialog.FileName;
                 try
                 {
