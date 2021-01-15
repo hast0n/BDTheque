@@ -45,6 +45,12 @@ namespace App
             searchTextBox.Text = SearchBarPlaceholder;
 
             _currentSearchType = SearchType.Title;
+
+            if (_user.Privilege is Privilege.Administrator)
+            {
+                this.Text += " - Administrateur";
+                addAlbumButton.Visible = true;
+            }
         }
         
 
@@ -122,6 +128,7 @@ namespace App
                     Album = album,
                     IsOwned = true,
                     IsWished = false,
+                    DisplayStars = true,
 
                     User = _user,
                     UserRepository = _userRepository,
@@ -238,6 +245,35 @@ namespace App
                 RefreshOwnedAlbum();
 
                 NeedRefresh = false;
+            }
+        }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void addAlbumButton_Click(object sender, EventArgs e)
+        {
+            AddAlbumForm newAlbumForm = new AddAlbumForm(_albumRepository);
+            var result = newAlbumForm.ShowDialog();
+
+            if (result is DialogResult.OK)
+            {
+                Album newAlbum = new Album()
+                {
+                    Title = newAlbumForm.Title,
+                    Publisher = newAlbumForm.Publisher,
+                    Description = newAlbumForm.Description,
+                    Isbn = newAlbumForm.Isbn,
+                    Category = newAlbumForm.Category,
+                    Authors = newAlbumForm.Authors,
+                    Genres = newAlbumForm.Genres,
+                    Series = newAlbumForm.Series,
+                    Cover = newAlbumForm.Cover
+                };
+                
+                _albumRepository.Save(newAlbum);
             }
         }
     }

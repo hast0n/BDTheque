@@ -45,6 +45,8 @@ namespace App
             this.titleRadioButton = new System.Windows.Forms.RadioButton();
             this.currentUserLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.quitButton = new System.Windows.Forms.Button();
+            this.addAlbumButton = new System.Windows.Forms.Button();
             this.mainTabControl.SuspendLayout();
             this.myAlbumsPage.SuspendLayout();
             this.marketAlbumsPage.SuspendLayout();
@@ -65,7 +67,7 @@ namespace App
             this.mainTabControl.Margin = new System.Windows.Forms.Padding(2);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(889, 579);
+            this.mainTabControl.Size = new System.Drawing.Size(889, 572);
             this.mainTabControl.TabIndex = 4;
             // 
             // myAlbumsPage
@@ -75,7 +77,7 @@ namespace App
             this.myAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
             this.myAlbumsPage.Name = "myAlbumsPage";
             this.myAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.myAlbumsPage.Size = new System.Drawing.Size(881, 553);
+            this.myAlbumsPage.Size = new System.Drawing.Size(881, 546);
             this.myAlbumsPage.TabIndex = 0;
             this.myAlbumsPage.Text = "Albums possédés";
             this.myAlbumsPage.UseVisualStyleBackColor = true;
@@ -86,7 +88,7 @@ namespace App
             this.ownedFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ownedFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
             this.ownedFlowLayoutPanel.Name = "ownedFlowLayoutPanel";
-            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(877, 549);
+            this.ownedFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
             this.ownedFlowLayoutPanel.TabIndex = 0;
             // 
             // marketAlbumsPage
@@ -96,7 +98,7 @@ namespace App
             this.marketAlbumsPage.Margin = new System.Windows.Forms.Padding(2);
             this.marketAlbumsPage.Name = "marketAlbumsPage";
             this.marketAlbumsPage.Padding = new System.Windows.Forms.Padding(2);
-            this.marketAlbumsPage.Size = new System.Drawing.Size(881, 553);
+            this.marketAlbumsPage.Size = new System.Drawing.Size(881, 546);
             this.marketAlbumsPage.TabIndex = 1;
             this.marketAlbumsPage.Text = "Albums sur le marché ";
             this.marketAlbumsPage.UseVisualStyleBackColor = true;
@@ -107,7 +109,7 @@ namespace App
             this.marketFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.marketFlowLayoutPanel.Location = new System.Drawing.Point(2, 2);
             this.marketFlowLayoutPanel.Name = "marketFlowLayoutPanel";
-            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(877, 549);
+            this.marketFlowLayoutPanel.Size = new System.Drawing.Size(877, 542);
             this.marketFlowLayoutPanel.TabIndex = 0;
             // 
             // wishesPage
@@ -236,16 +238,41 @@ namespace App
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.welcomeLabel.Location = new System.Drawing.Point(11, 13);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(495, 17);
+            this.welcomeLabel.Size = new System.Drawing.Size(503, 17);
             this.welcomeLabel.TabIndex = 5;
-            this.welcomeLabel.Text = "Bienvenu dans votre BDThèque, faites comme chez vous, c\'est moi qui offre !";
+            this.welcomeLabel.Text = "Bienvenue dans votre BDThèque, faites comme chez vous, c\'est moi qui offre !";
+            // 
+            // quitButton
+            // 
+            this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.quitButton.Location = new System.Drawing.Point(799, 737);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(101, 32);
+            this.quitButton.TabIndex = 6;
+            this.quitButton.Text = "Quitter";
+            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            // 
+            // addAlbumButton
+            // 
+            this.addAlbumButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.addAlbumButton.Location = new System.Drawing.Point(11, 737);
+            this.addAlbumButton.Name = "addAlbumButton";
+            this.addAlbumButton.Size = new System.Drawing.Size(188, 32);
+            this.addAlbumButton.TabIndex = 7;
+            this.addAlbumButton.Text = "Enregistrer un album";
+            this.addAlbumButton.UseVisualStyleBackColor = true;
+            this.addAlbumButton.Visible = false;
+            this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 741);
+            this.ClientSize = new System.Drawing.Size(911, 781);
+            this.Controls.Add(this.addAlbumButton);
+            this.Controls.Add(this.quitButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.searchOptionsGroupBox);
             this.Controls.Add(this.mainTabControl);
@@ -284,5 +311,7 @@ namespace App
         private System.Windows.Forms.RadioButton titleRadioButton;
         private System.Windows.Forms.Label currentUserLabel;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Button quitButton;
+        private System.Windows.Forms.Button addAlbumButton;
     }
 }

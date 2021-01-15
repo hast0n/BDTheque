@@ -25,12 +25,6 @@ namespace DAL.Services
         IList<Album> GetAll();
 
         /// <summary>
-        /// Get all albums minus ones that user own
-        /// </summary>
-        /// <returns> A Generic Album List </returns>
-        IList<Album> GetMarketAlbums();
-
-        /// <summary>
         /// Get albums by title or sub-part of title
         /// </summary>
         /// <param name="title"> title string </param>
@@ -57,5 +51,29 @@ namespace DAL.Services
         /// <param name="genre"> genre name string </param>
         /// <returns> A Generic Album List </returns>
         IList<Album> GetByGenre(string genre);
+
+        /// <summary>
+        /// Get available authors
+        /// </summary>
+        /// <returns> an Author generic List </returns>
+        IList<Author> GetAuthors();
+
+        /// <summary>
+        /// Get available series
+        /// </summary>
+        /// <returns> a Series generic List </returns>
+        IList<Series> GetSeries();
+
+        /// <summary>
+        /// Get available genres
+        /// </summary>
+        /// <returns> a Genre generic List </returns>
+        IList<Genre> GetGenres();
+
+        /// <summary>
+        /// Get available categories
+        /// </summary>
+        /// <returns> a Category generic List </returns>
+        IList<Category> GetCategories();
     }
 }

@@ -15,8 +15,8 @@ namespace App
         public User User;
         public IUserRepository UserRepository;
 
-        private bool _isOwned_baseValue;
-        private bool _isWished_baseValue;
+        private bool _isOwnedBaseValue;
+        private bool _isWishedBaseValue;
 
         public AlbumForm()
         {
@@ -25,8 +25,8 @@ namespace App
 
         private void AlbumForm_Load(object sender, EventArgs e)
         {
-            _isOwned_baseValue = IsOwned;
-            _isWished_baseValue = IsWished;
+            _isOwnedBaseValue = IsOwned;
+            _isWishedBaseValue = IsWished;
 
             titleTextBox.Text = Album.Title;
             authorsTextBox.Text = string.Join(" ,", Album.Authors);
@@ -68,7 +68,7 @@ namespace App
 
         private void OnFormClosedEventHandler(object o, FormClosedEventArgs args)
         {
-            MainForm.NeedRefresh = _isOwned_baseValue != IsOwned || _isWished_baseValue != IsWished;
+            MainForm.NeedRefresh = _isOwnedBaseValue != IsOwned || _isWishedBaseValue != IsWished;
         }
 
         private void categoryTextBox_MouseHover(object sender, EventArgs e)
