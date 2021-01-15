@@ -33,8 +33,8 @@ namespace Domain
             List<Author> authors,
             List<Genre> genres,
             Category category,
-            Series series)
-            //Cover cover)
+            Series series,
+            byte[] Cover)
         {
             Title = title;
             Isbn = isbn;
@@ -44,7 +44,7 @@ namespace Domain
             Genres = genres;
             Series = series;
             Category = category;
-            //Cover = cover.File;
+            Cover = ;
         }
 
         public override string ToString() => $"{Title}, {string.Join(" & ", Category)}, {Publisher}";
